@@ -37,6 +37,56 @@
   }
 }
 
+.conf-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confform-container {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.confform-container .header {
+  flex: 20%;
+  display: grid;
+  place-items: center;
+}
+
+.confform-container .body {
+  flex: 60%;
+}
+
+.confform-container .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.confform-container .footer button {
+  border-radius: 7px;
+  width: 100px;
+  height: 45px;
+  background-color: rgb(32, 10, 231);
+  /* font-weight: bold; */
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  margin: 5px;
+  font-size: large;
+}
 .sign-up-container {
   height: 100%;
   width: 100%;

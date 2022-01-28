@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 //Navigation
@@ -12,22 +12,32 @@ import Footer from './components/partials/Footer';
 //public routes
 import Home from './components/pages/Home';
 
+//conference
+import Form from './components/conference/Form';
+
 function App() {
   return (
-<>
-<NavMenu />
-<Header />
+    <>
+      <Router>
+        <NavMenu />
+        <Header />
+        <div className='main-content'>
+          <Switch>
 
-<Switch>
+            <Route exact path={['/', '/home']}>
+              <Home />
+            </Route>
 
-<Route path={['/', '/home']}>
-  <Home />
-</Route>
+            <Route path='/form'>
+              <Form />
+            </Route>
 
-</Switch>
-<Footer />
+          </Switch>
 
-</>
+          <Footer />
+        </div>
+      </Router>
+    </>
   );
 }
 
