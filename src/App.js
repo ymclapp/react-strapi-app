@@ -15,6 +15,11 @@ import Home from './components/pages/Home';
 //conference
 import Form from './components/conference/Form';
 
+//private routes - admin dashboard
+import Users from './components/dashboard/Users';
+import Demo from './components/dashboard/Demographics';
+import Sessions from './components/dashboard/Sessions';
+
 function App() {
   return (
     <>
@@ -30,6 +35,12 @@ function App() {
 
             <Route path='/form'>
               <Form />
+            </Route>
+
+            <Route path='/dashboard'>
+              <Users />
+              <Demo />
+              <Sessions />
             </Route>
 
           </Switch>
