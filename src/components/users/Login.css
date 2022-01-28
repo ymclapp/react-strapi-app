@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+/* .login-section {
+    width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.4);
+} */
+
+/* .login-input,
+.login-button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.login-label,
+.login-button {
+  margin-top: 1rem;
+} */
+
+.login-button {
+  padding: 0.5rem;
+}
+
+.login-title{
+    margin-bottom: 35px;
+    margin-top: 20px;
+  }
+  
+  .login-form{
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    width: 450px;
+    height: 400px;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    padding: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .login-button{
+    margin-top: 30px;
+    margin-left: 15px;
+    color: black;
+    background-color: #E7F0FE;
+    border: 1px solid #ccdcf5 !important;
+  }
