@@ -29,7 +29,9 @@ function App() {
       <Router>
         <NavMenu />
         <Header />
+
         <div className='main-content'>
+
           <Switch>
 
             <Route exact path={['/', '/home']}>
@@ -57,7 +59,9 @@ function App() {
           </Switch>
 
           <Footer />
+          
         </div>
+
       </Router>
     </>
   );
