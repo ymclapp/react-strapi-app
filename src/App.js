@@ -11,6 +11,7 @@ import Footer from './components/partials/Footer';
 
 //public routes
 import Home from './components/pages/Home';
+import Registration from './components/users/Registration';
 
 //conference
 import Form from './components/conference/Form';
@@ -31,6 +32,10 @@ function App() {
 
             <Route exact path={['/', '/home']}>
               <Home />
+            </Route>
+
+            <Route path='/registration'>
+              <Registration />
             </Route>
 
             <Route path='/form'>
