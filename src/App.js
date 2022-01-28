@@ -12,6 +12,7 @@ import Footer from './components/partials/Footer';
 //public routes
 import Home from './components/pages/Home';
 import Registration from './components/users/Registration';
+import Login from './components/users/Login';
 
 //conference
 import Form from './components/conference/Form';
@@ -20,6 +21,7 @@ import Form from './components/conference/Form';
 import Users from './components/dashboard/Users';
 import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
+
 
 function App() {
   return (
@@ -36,6 +38,10 @@ function App() {
 
             <Route path='/registration'>
               <Registration />
+            </Route>
+
+            <Route path='/login'>
+              <Login />
             </Route>
 
             <Route path='/form'>

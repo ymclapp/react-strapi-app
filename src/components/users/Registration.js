@@ -116,7 +116,7 @@ const Registration = () => {
             ) : (
                 <section className='reg-section'>
                     <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errMsg}</p>
-                    <h1 className='header text-center'> Register</h1>
+                    <h1 className='reg-title text-center'> Register</h1>
                     <Form className='reg-form' onSubmit={handleRegistrationSubmit}>
 
                         <FloatingLabel className='reg-label' htmlFor='username'>
@@ -159,7 +159,7 @@ const Registration = () => {
                             </span>
                         </FloatingLabel>
                         <Form.Control
-                        className='reg-input'
+                            className='reg-input'
                             type='password'
                             id='password'
                             onChange={(e) => setPassword(e.target.value)}
@@ -186,7 +186,7 @@ const Registration = () => {
                             </span>
                         </FloatingLabel>
                         <Form.Control
-                        className='reg-input'
+                            className='reg-input'
                             type='password'
                             id='confirm_password'
                             onChange={(e) => setMatchPassword(e.target.value)}
@@ -227,14 +227,14 @@ const Registration = () => {
                         <br />
 
                         <Button className='reg-button' type='submit' disabled={!validName || !validPassword || !validMatch ? true : false}>Create Account</Button>
+                        <br />
+                        <p className='have-acct text-center'>
+                            Already have an account?<br />
+                            <span className='line'>
+                                <a href='/login'>Sign In</a>
+                            </span>
+                        </p>
                     </Form>
-
-                    <p>
-                        Already register?<br />
-                        <span className='line'>
-                            <a href='/login'>Sign In</a>
-                        </span>
-                    </p>
                 </section>
             )}
         </>
