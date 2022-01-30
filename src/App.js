@@ -21,6 +21,7 @@ import Form from './components/conference/Form';
 import Users from './components/dashboard/Users';
 import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
+import Profile from './components/users/Profile';
 
 
 function App() {
@@ -48,6 +49,10 @@ function App() {
 
             <Route path='/form'>
               <Form />
+            </Route>
+
+            <Route path='/profile'>
+              <Profile />
             </Route>
 
             <Route path='/dashboard'>

@@ -27,9 +27,19 @@ const Login = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [user, setUser] = useState();
     const [success, setSuccess] = useState(false);
     const [errMsg, setErrMsg] = useState('');
 
+    
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem('user');
+        if(loggedInUser) {
+            const foundUser = JSON.parse(loggedInUser);
+            setUser(foundUser);
+        }
+    }, []);
+    
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -38,12 +48,21 @@ const Login = () => {
         setErrMsg('');
     }, [username, password])
 
+    const handleLogout = () => {
+        setUser({});
+        setUsername('');
+        setPassword('');
+        localStorage.clear();
+    };
+
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
+        const user = {username, password};
+        console.log('Submitting....');
 
         try {
             const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ identifier: username, password }),
+                JSON.stringify({ identifier: username, password }, user),
                 {
                     headers: { 'Content-Type': 'application/json' },
                     //withCredentials: true
@@ -51,13 +70,18 @@ const Login = () => {
             );
             console.log(response?.data)
             console.log(response?.data.jwt)
+            console.log(response?.data.user.username)
             console.log(response?.data.user.confirmed)
             const jwt = response?.data.jwt;
+            //const jsonData = response?.json({});
             const confirmed = response?.data.user.confirmed;
-            setAuth({ username, password, confirmed, jwt });
+
+            setAuth({ username, password, user,confirmed, jwt });
+            setUser(response?.data.user);
             setUsername('');
             setPassword('');
             setSuccess(true);
+            localStorage.setItem('user', JSON.stringify(response?.data.user));
             // navigate(from, { replace: true });
         } catch (err) {
             if (!err?.response === 500) {
@@ -73,12 +97,22 @@ const Login = () => {
         }
     }
 
+if (user) {
+    return (
+        <div>
+            {user.username} is logged in
+            <Button onClick={handleLogout}>logout</Button>            
+        </div>
+    );
+}
+
 
     return (
         <>
             {success ? (
                 <section>
-                    <h1>You are logged in!</h1>
+                    <h1>You are logged in {user.username}!</h1>
+                    {/* <h1>{JSON.stringify(user.username)}</h1> */}
                     <br />
                     <p>
                         <a href="/home">Go to Home</a>
