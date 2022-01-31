@@ -6,6 +6,23 @@ import { Card, Container } from 'react-bootstrap';
 //const API = 'http://localhost:1337/api/users/me';
 
 export default function Profile() {
+    //const id = JSON.parse(localStorage.getItem('user.id'));
+
+// const [profile, setProfile] = useState();
+// const [demographics, setDemographics] = useState([]);
+// const [showAddQuestionModal, setShowAddQuestionModal] = useState(false);
+    
+// useEffect(async () => {
+    //if (!id) return;
+//   const Profiledata = await axios.get(
+    //'http://localhost:1337/users/' + id
+    //);
+    //var demographicData = DemographicData?.data?.demographic;
+    //setProfile(data?.data);
+    //setDemographics(demographicData);
+// }, [id]);
+
+
 
     const user = JSON.parse(localStorage.getItem('user'));
 
