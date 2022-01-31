@@ -7,12 +7,14 @@ import pic3 from '../stockPhotos/working.jpg';
 
 export default function Home() {
 
+    const user = JSON.parse(localStorage.getItem('user'));
+
 
     return (
         <>
             <div className='container text-center'>
                 <header className='jumbotron'>
-                    <h3>Welcome to the Home page</h3>
+                    <h3>Welcome to the Home page, {user.firstName}!</h3>
                 </header>
             </div>
 

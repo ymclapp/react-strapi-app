@@ -3,7 +3,7 @@ import './Login.css';
 import { useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
 import { Form, Button, FloatingLabel } from 'react-bootstrap';
-//import { useNavigate, useLocation } from 'react-router-dom';  //not until router-v6
+import { useHistory } from 'react-router-dom';  //not until router-v6
 
 import axios from '../../api/axios';
 const LOGIN_URL = '/auth/local'; //he says that this is in his node.js beginner course
@@ -17,6 +17,7 @@ const LOGIN_URL = '/auth/local'; //he says that this is in his node.js beginner 
 const Login = () => {
 
     const { setAuth } = useAuth();
+    const history = useHistory();
 
     // const navigate = useNavigate();
     // const location = useLocation();
@@ -53,6 +54,8 @@ const Login = () => {
         setUsername('');
         setPassword('');
         localStorage.clear();
+        history.push('/login');
+        window.location.reload();
     };
 
     const handleLoginSubmit = async (e) => {
@@ -100,7 +103,8 @@ const Login = () => {
 if (user) {
     return (
         <div>
-            {user.username} is logged in
+            <h1 className='not_header'>Welcome {user.firstName}!</h1>
+            <br />
             <Button onClick={handleLogout}>logout</Button>            
         </div>
     );
@@ -111,7 +115,7 @@ if (user) {
         <>
             {success ? (
                 <section>
-                    <h1>You are logged in {user.username}!</h1>
+                    <h1>{user.firstName}, you are logged in!</h1>
                     {/* <h1>{JSON.stringify(user.username)}</h1> */}
                     <br />
                     <p>
