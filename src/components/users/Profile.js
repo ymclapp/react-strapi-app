@@ -15,7 +15,7 @@ export default function Profile() {
             <Container as='div' className='showUsers mt-4'>
                 {/* <h3>This will show the raw data for all demographics - curly brace JSON.stringify(user).  This is using localStorage via const user = JSON.parse(localStorage.getItem('user'));</h3>
                 <p>{JSON.stringify(user)}</p> */}
-                <h4>{user.firstName} {user.lastName}</h4>
+                <h4><strong>{user.firstName} {user.lastName}'s</strong> info is showing from localStorage</h4>
                 
                 <Card>
                     <Card.Body>
@@ -24,6 +24,8 @@ export default function Profile() {
                         Username:  {user.username}
                         <br />
                         User Email:  {user.email}
+                        <br />
+                        User Role:  {user.roles}
                     </Card.Body>
 
                 </Card>
