@@ -18,11 +18,11 @@ export default function Home() {
                 <header className='jumbotron'>
                     <h3>Welcome to the Conference page, {user.firstName}!</h3>
                     <img
-              alt='ATS Conference Logo'
-              src={ Logo }
-              width='460'
-              height='160'
-            />
+                        alt='ATS Conference Logo'
+                        src={Logo}
+                        width='460'
+                        height='160'
+                    />
                 </header>
             </div>
 
@@ -30,7 +30,7 @@ export default function Home() {
                 <CardGroup>
                     <Card className="card">
                         <Card.Header>
-                        <strong>Conference Registration</strong>
+                            <strong>Conference Registration</strong>
                         </Card.Header>
                         <Card.Img className='featured' variant='top' src={pic1} />
                         <Card.Body>
@@ -44,12 +44,16 @@ export default function Home() {
                     </Card>
                     <Card className="card">
                         <Card.Header>
-                        <strong>Sessions</strong>
+                            <strong>Sessions</strong>
                         </Card.Header>
+                        <div>
                         <Card.Img className='featured' variant='top' src={pic2} />
+                        </div>
                         <Card.Body>
                             <Card.Text>
-                                Text<br />More text
+                                Sessions will be held in the Moscone Center<br />747 Howard Street<br />San Francisco, CA 94103<br /><br />
+
+                                ATS 2022 San Francisco will offer the latest information on clinical, basic, and translational science in pulmonary, critical care, and sleep medicine.
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
