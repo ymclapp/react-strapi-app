@@ -1,6 +1,7 @@
-/* .conference{
-    width: 52%;
-  } */
+.conf-header{
+    font-size: x-large;
+    font-weight: 500;
+  }
 
   
   /* keep height at 15vw and the width at 100% and the object-fit at cover and the pictures will stay the same height */

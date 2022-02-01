@@ -45,8 +45,8 @@ export default function Home() {
             <Container as='div' className='conference text-center'>
                 <CardGroup>
                     <Card className="card">
-                        <Card.Header>
-                            <strong>Conference Registration</strong>
+                        <Card.Header className='conf-header'>
+                            Conference Registration
                         </Card.Header>
                         <Card.Img className='featured' variant='top' src={pic1} />
                         <Card.Body>
@@ -63,8 +63,8 @@ export default function Home() {
                         </Card.Footer>
                     </Card>
                     <Card className="card">
-                        <Card.Header>
-                            <strong>Sessions</strong>
+                        <Card.Header className='conf-header'>
+                            Sessions
                         </Card.Header>
                         <div>
                             <Card.Img className='featured' variant='top' src={pic2} />
@@ -81,8 +81,8 @@ export default function Home() {
                         </Card.Footer>
                     </Card>
                     <Card className="card">
-                        <Card.Header>
-                            <strong>Sponsors</strong>
+                        <Card.Header className='conf-header'>
+                            Sponsors
                         </Card.Header>
                         <Card.Img className='featured' variant='top' src={pic3} />
                         <Card.Body>
@@ -102,7 +102,7 @@ export default function Home() {
             <Container as='div' className='home text-center mt-5'>
                 <CardGroup>
                     <Card className="card">
-                        <Card.Header>
+                        <Card.Header className='conf-header'>
                             Title1
                         </Card.Header>
                         {/* <Card.Img className='featured' variant='top' src={pic1} /> */}
@@ -116,7 +116,7 @@ export default function Home() {
                         </Card.Footer>
                     </Card>
                     <Card className="card">
-                        <Card.Header>
+                        <Card.Header className='conf-header'>
                             Title2
                         </Card.Header>
                         {/* <Card.Img className='featured' variant='top' src={pic2} /> */}
@@ -130,7 +130,7 @@ export default function Home() {
                         </Card.Footer>
                     </Card>
                     <Card className="card">
-                        <Card.Header>
+                        <Card.Header className='conf-header'>
                             Text3
                         </Card.Header>
                         {/* <Card.Img className='featured' variant='top' src={pic3} /> */}
