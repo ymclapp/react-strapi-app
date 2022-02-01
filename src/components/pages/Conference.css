@@ -1,11 +1,14 @@
-.conference{
+/* .conference{
     width: 52%;
-  }
+  } */
   
   .featured{
     padding-top: 20px;
-    height: auto;
-    width: auto;
+    height: 100%;
+    width: 100%;
     padding-bottom: 20px;
   }
 
+.conf-summary {
+    padding: 5%;
+}
