@@ -2,6 +2,7 @@ import React from 'react';
 import { Nav, Navbar, Container, Offcanvas, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../partials/NavMenu.css';
+import Logo from './img/logo.png'
 
 export default function NavMenu() {
 
@@ -9,7 +10,13 @@ export default function NavMenu() {
     <>
       <Navbar className='navbar' sticky='top' expand={false}>
         <Container fluid>
-          <Navbar.Brand href='/' className='navbar-brand'> React Template[logo here]
+          <Navbar.Brand href='/' className='navbar-brand'>
+            <img
+              alt='ATS Logo'
+              src={ Logo }
+              width='200'
+              height='80'
+            />
             {' '}
           </Navbar.Brand>
 
@@ -30,6 +37,7 @@ export default function NavMenu() {
                 <Nav.Link as={Link} to='/login' className='navbar-link'>Login</Nav.Link>
                 {/* <Nav.Link as={Link} to='/form' className='navbar-link'>New Form</Nav.Link> */}
                 <NavDropdown title="Conference Registration" id="offcanvasNavbarDropdown">
+                <NavDropdown.Item href='/conference'>Conference</NavDropdown.Item>
                   <NavDropdown.Item href='/demoform'>Conference Demographic Form</NavDropdown.Item>
                   <NavDropdown.Item href="/sessionsform">Conference Sessions Form</NavDropdown.Item>
                   <NavDropdown.Divider />
@@ -47,7 +55,7 @@ export default function NavMenu() {
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              
+
               <Form className="d-flex">
                 <FormControl
                   type="search"

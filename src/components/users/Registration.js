@@ -114,7 +114,7 @@ const Registration = () => {
                     </p>
                 </section>
             ) : (
-                <section className='reg-section'>
+                <section className='reg-section ats-background-logo'>
                     <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errMsg}</p>
                     <h1 className='reg-title text-center'> Register</h1>
                     <Form className='reg-form' onSubmit={handleRegistrationSubmit}>

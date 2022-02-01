@@ -1,0 +1,18 @@
+.conf-header{
+    font-size: x-large;
+    font-weight: 500;
+  }
+
+  
+  /* keep height at 15vw and the width at 100% and the object-fit at cover and the pictures will stay the same height */
+  .featured{
+    object-fit: cover;
+    padding-top: 20px;
+    height: 15vw;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+.conf-summary {
+    padding: 5%;
+}

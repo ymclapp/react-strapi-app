@@ -15,7 +15,9 @@ import Registration from './components/users/Registration';
 import Login from './components/users/Login';
 
 //conference
+import Conference from './components/pages/Conference';
 import Form from './components/conference/Form';
+import ConfSessions from './components/conference/ConfSessions';
 
 //private routes - admin dashboard
 import Users from './components/dashboard/Users';
@@ -37,6 +39,14 @@ function App() {
 
             <Route exact path={['/', '/home']}>
               <Home />
+            </Route>
+
+            <Route path='/conference'>
+              <Conference />
+            </Route>
+
+            <Route path='/sessions'>
+              <ConfSessions />
             </Route>
 
             <Route path='/registration'>
