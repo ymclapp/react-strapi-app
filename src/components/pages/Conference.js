@@ -53,7 +53,7 @@ export default function Home() {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <Button href='/conference'>Link</Button>
+                            <Button href='/sessions'>Link</Button>
                         </Card.Footer>
                     </Card>
                     <Card className="card">

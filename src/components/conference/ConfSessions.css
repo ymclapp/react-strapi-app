@@ -1,0 +1,21 @@
+.day-header {
+    font-size: x-large;
+}
+
+thead{
+    background-color: rgb(163, 233, 238);
+}
+
+.time {
+    width: 20em;
+}
+
+/* .sess-desc {
+    width: 20em;
+} */
+
+.sess-table {
+    width: 80%;
+    margin: 3%;
+    margin-left: 9%;
+}
