@@ -85,7 +85,7 @@ const Login = () => {
             setPassword('');
             setSuccess(true);
             localStorage.setItem('user', JSON.stringify(response?.data.user));
-            // navigate(from, { replace: true });
+            history.push('/');
         } catch (err) {
             if (!err?.response === 500) {
                 setErrMsg('No Server Response');
@@ -125,7 +125,7 @@ if (user) {
                 
             ) : (
 
-                <section className='login-section'>
+                <section className='login-section ats-background-logo'>
                     <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errMsg}</p>
                     <h1 className='login-title text-center'>Sign In</h1>
 

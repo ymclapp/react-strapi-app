@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+.ats-background-logo {
+  background: url(https://www.thoracic.org/_files/images/login/logo-ALL-WHITE-16.svg) 0% 0% no-repeat;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
