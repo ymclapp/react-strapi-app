@@ -1,5 +1,6 @@
 import React from 'react';
 import './Conference.css';
+import Logo from '../conference/conf_logo.png';
 import { Card, Container, CardGroup, Button } from 'react-bootstrap';
 
 import pic1 from '../stockPhotos/conference-image1.jpg';
@@ -15,7 +16,13 @@ export default function Home() {
         <>
             <div className='container text-center'>
                 <header className='jumbotron'>
-                    <h3>Welcome to the Home page, {user.firstName}!</h3>
+                    <h3>Welcome to the Conference page, {user.firstName}!</h3>
+                    <img
+              alt='ATS Conference Logo'
+              src={ Logo }
+              width='460'
+              height='160'
+            />
                 </header>
             </div>
 

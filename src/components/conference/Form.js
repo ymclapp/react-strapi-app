@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import SignUpInfo from './SignUpInfo';
 import PersonalInfo from './PersonalInfo';
-import OtherInfo from './OtherInfo';
+import ConferenceDate from './OtherInfo';
 
 export default function Form() {
     const [page, setPage] = useState(0);
@@ -16,9 +16,10 @@ export default function Form() {
         nationality: '',
         other: '',
         occupation: '',
+        confDate:  '',
     });
 
-    const FormTitles = ['Sign Up', 'Personal Info', 'Other'];
+    const FormTitles = ['Sign Up', 'Personal Info', 'Conference Date'];
 
     //will find out what page we are in and then return a component based on that
     const PageDisplay = () => {
@@ -27,7 +28,7 @@ export default function Form() {
         } else if (page === 1) {
             return <PersonalInfo formData={formData} setFormData={setFormData} />;
         } else {
-            return <OtherInfo formData={formData} setFormData={setFormData} />;
+            return <ConferenceDate formData={formData} setFormData={setFormData} />;
         }
     };
 
