@@ -20,8 +20,8 @@ export default function Home() {
                     <img
                         alt='ATS Conference Logo'
                         src={Logo}
-                        width='460'
-                        height='160'
+                        width='100%'
+                        height='180'
                     />
                 </header>
             </div>
