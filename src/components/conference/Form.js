@@ -32,6 +32,8 @@ export default function Form() {
         }
     };
 
+    //const response = JSON.stringify(formData);
+
     return (
         <div className='conf-form'>
             <div className='progressbar'>
@@ -57,6 +59,9 @@ export default function Form() {
                             if (page === FormTitles.length - 1) {
                                 alert('Form Submitted');
                                 console.log(formData);
+                                localStorage.setItem('dates', JSON.stringify([formData.confDate, formData.nationality, formData.other, formData.occupation]));
+                                localStorage.setItem('sessions', JSON.stringify([formData.email, formData.password, formData.confirmPassword]));
+                                localStorage.setItem('stuff', JSON.stringify([formData.firstName, formData.lastName, formData.username]));
                             } else { 
                                 setPage((currPage) => currPage + 1);
                             }

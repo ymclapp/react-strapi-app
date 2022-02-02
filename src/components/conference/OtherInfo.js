@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
+import React from 'react';
 import { Form } from 'react-bootstrap';
 
 export default function OtherInfo({ formData, setFormData }) {
 
-    const [dates, setDates] = useState('');
 
     return (
         <div className='other-info-container'>
             <input
                 type='text'
-                placeholder='Nationality...'
+                placeholder='"Dates" save to localStorage test'
                 value={formData.nationality}
                 onChange={(event) => setFormData({ ...formData, nationality: event.target.value })}
-                onClick={(e) => setDates(...dates, e.target.value)} 
                 />
             
             <input
