@@ -25,6 +25,8 @@ import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
 
+const user = JSON.parse(localStorage.getItem('user'));
+
 
 function App() {
   return (
@@ -64,17 +66,18 @@ function App() {
             <Route path='/profile'>
               <Profile />
             </Route>
-
-            <Route path='/dashboard'>
-              <Users />
-              <Demo />
-              <Sessions />
-            </Route>
+            {user &&
+              <Route path='/dashboard'>
+                <Users />
+                <Demo />
+                <Sessions />
+              </Route>
+            }
 
           </Switch>
 
           <Footer />
-          
+
         </div>
 
       </Router>
