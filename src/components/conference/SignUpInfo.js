@@ -11,17 +11,17 @@ export default function SignUpInfo({ formData, setFormData }) {
         />
 
       <input
-        type='password'
-        placeholder='Password...'
-        value={formData.password}
-        onChange={(event) => setFormData({ ...formData, password: event.target.value })} 
+        type='text'
+        placeholder='Text1'
+        value={formData.text1}
+        onChange={(event) => setFormData({ ...formData, text1: event.target.value })} 
         />
 
       <input
-        type='password'
-        placeholder='Confirm Password...'
-        value={formData.confirmPassword}
-        onChange={(event) => setFormData({ ...formData, confirmPassword: event.target.value })} 
+        type='text'
+        placeholder='Text2'
+        value={formData.text2}
+        onChange={(event) => setFormData({ ...formData, text2: event.target.value })} 
         />
     </div>
   );

@@ -29,7 +29,7 @@ export default function OtherInfo({ formData, setFormData }) {
                 />
 
                 <Form>
-                    <Form.Select aria-label='Select a date:' value={formData.confDate} onChange={(event) => setFormData({...formData, confDate:  event.target.value})}>
+                    <Form.Select aria-label='Select a date:' onChange={(event) => setFormData({...formData, confDate:  event.target.value})}>
                         <option>Select a date:</option>
                         <option value='fridayOnly'>Friday, May 13 Only</option>
                         <option value='both'>Friday, May 13 and Saturday, May 14</option>
