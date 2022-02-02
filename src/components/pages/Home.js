@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Container, CardGroup, Button } from 'react-bootstrap';
+//import { useAuth } from '../../hooks/useAuth';
 
 import pic1 from '../stockPhotos/brainstorm.jpg';
 import pic2 from '../stockPhotos/lightbulb.jpg';
@@ -14,7 +15,8 @@ export default function Home() {
         <>
             <div className='container text-center'>
                 <header className='jumbotron'>
-                    <h3>Welcome to the Home page, {user.firstName}!</h3>
+                    {user && <h3>Welcome to the Home page, {user.firstName}!</h3>}
+                    {!user && <h3>Welcome!</h3>}
                 </header>
             </div>
 
