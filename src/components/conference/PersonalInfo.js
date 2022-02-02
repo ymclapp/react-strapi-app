@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form } from 'react-bootstrap';
 
 export default function PersonalInfo({ formData, setFormData }) {
 
@@ -11,16 +12,18 @@ export default function PersonalInfo({ formData, setFormData }) {
       <input
         type='text'
         placeholder='First Name...'
-        value={user.firstName}
+        defaultValue={formData.firstName}
         onChange={(event) => setFormData({ ...formData, firstName: event.target.value })}
       />
+
       <label>Last Name:</label>
       <input
         type='text'
         placeholder='Last Name...'
-        value={user.lastName}
+        defaultValue={user.lastName}
         onChange={(event) => setFormData({ ...formData, lastName: event.target.value })}
       />
+
       <label>Username:</label>
       <input
         type='text'
@@ -28,6 +31,14 @@ export default function PersonalInfo({ formData, setFormData }) {
         value={user.confirmed}
         onChange={(event) => setFormData({ ...formData, username: event.target.value })}
       />
+
+      <Form>
+        <Form.Select aria-label='Select a date:' onChange={(event) => setFormData({ ...formData, yes: event.target.value })}>
+          <option>Is the above you?</option>
+          <option value='true'>Yes</option>
+          <option value='false'>No</option>
+        </Form.Select>
+      </Form>
     </div>
   );
 }

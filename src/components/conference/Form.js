@@ -17,6 +17,7 @@ export default function Form() {
         firstName: '',
         lastName: '',
         confirmed: '',
+        yes:  '',
         nationality: '',
         other: '',
         occupation: '',
