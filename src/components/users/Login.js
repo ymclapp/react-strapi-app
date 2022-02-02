@@ -62,6 +62,7 @@ const Login = () => {
         e.preventDefault();
         const user = {username, password};
         console.log('Submitting....');
+        alert('Thank you for logging in!  Please wait while we verify your information');
 
         try {
             const response = await axios.post(LOGIN_URL,
@@ -102,10 +103,10 @@ const Login = () => {
 
 if (user) {
     return (
-        <div>
+        <div className='text-center'>
             <h1 className='not_header'>Welcome {user.firstName}!</h1>
             <br />
-            <Button onClick={handleLogout}>logout</Button>            
+            <Button onClick={handleLogout}>Logout</Button>            
         </div>
     );
 }

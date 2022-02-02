@@ -73,6 +73,7 @@ const Registration = () => {
             return;
         }
         console.log('Submitting....');
+        alert('Thank you for registering!  Please wait while we save your information');
         // console.log(username, password);
         // setSuccess(true);
 
