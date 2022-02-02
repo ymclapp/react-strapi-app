@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 
 import SignUpInfo from './SignUpInfo';
 import PersonalInfo from './PersonalInfo';
@@ -8,7 +8,7 @@ import Confirmation from './Confirmation';
 
 export default function Form() {
 
-    const history = useHistory();
+    //const history = useHistory();
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
         email: '',
@@ -62,12 +62,12 @@ export default function Form() {
                     <button
                         onClick={() => {
                             if (page === FormTitles.length - 2) {
-                                alert('Form Submitted');
+                                alert('Registration Info Saving');
                                 console.log(formData);
                                 localStorage.setItem('dates', JSON.stringify({confDate: formData.confDate, nationality:  formData.nationality, other:  formData.other, occupation: formData.occupation}));
                                 localStorage.setItem('sessions', JSON.stringify({email:  formData.email, text1:  formData.text1, text2:  formData.text2}));
                                 localStorage.setItem('stuff', JSON.stringify({firstName:  formData.firstName, lastName:  formData.lastName, confirmed:  formData.confirmed}));
-                                history('/confirmation');
+                                setPage((currPage) => currPage + 1);
                             } else { 
                                 setPage((currPage) => currPage + 1);
                             }
