@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, FloatingLabel, Button } from 'react-bootstrap';
+import { Form, FloatingLabel } from 'react-bootstrap';
 import './Confirmation.css';
 
 export default function Confirmation() {
@@ -93,6 +93,9 @@ export default function Confirmation() {
                         onChange={(event) => setRegistrationData({ ...registrationData, text8: event.target.value })}
                     />
                 </Form.Group>
+                <p>
+                    Please review the above information.  If anything is not correct, click the Prev button to go back to the appropriate form, fix the incorrect information, then click Next to get back to the confirmation page.
+                </p>
 
 
                 {/* <input

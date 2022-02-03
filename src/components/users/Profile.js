@@ -111,10 +111,9 @@ export default function Profile() {
                             //required
                             />
 
-                            {/* <FloatingLabel className='demo-label' htmlFor='phone'>Phone:  </FloatingLabel> */}
+                            <FloatingLabel className='demo-label' htmlFor='phone'>Phone:  </FloatingLabel>
                             <Form.Control
                                 className='demo-input'
-                                placeholder='Phone...'
                                 type='text'
                                 id='phone'
                                 value={demographicData.phone}
