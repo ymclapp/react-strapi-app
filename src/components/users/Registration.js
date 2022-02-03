@@ -87,7 +87,7 @@ const Registration = () => {
             );
             console.log(response.data);
             console.log(response.data.jwt);
-            console.log(response.data.user.roles);
+            //console.log(response.data.user.roles);
             // console.log(JSON.stringify(response))
             setSuccess(true);
             //clear input fields

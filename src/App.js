@@ -26,6 +26,7 @@ import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
 
 const user = JSON.parse(localStorage.getItem('user'));
+const registration = JSON.parse(localStorage.getItem('registration'));
 
 
 function App() {
@@ -58,14 +59,18 @@ function App() {
             <Route path='/login'>
               <Login />
             </Route>
+            {!registration &&
+              <Route path='/form'>
+                <Form />
+              </Route>
+            }
+            {user &&
+              <Route path='/profile'>
+                <Profile />
+              </Route>
+            }
 
-            <Route path='/form'>
-              <Form />
-            </Route>
 
-            <Route path='/profile'>
-              <Profile />
-            </Route>
             {user &&
               <Route path='/dashboard'>
                 <Users />

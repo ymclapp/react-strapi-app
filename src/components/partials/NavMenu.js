@@ -7,6 +7,7 @@ import Logo from './img/logo.png'
 export default function NavMenu() {
 
   const user = JSON.parse(localStorage.getItem('user'));
+  const registration = JSON.parse(localStorage.getItem('registration'));
 
   return (
     <>
@@ -37,6 +38,7 @@ export default function NavMenu() {
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href='/home' className='navbar-link'>Home</Nav.Link>
                 {!user && <Nav.Link href='/login' className='navbar-link'>Login</Nav.Link>}
+                {user && <Nav.Link href='/profile' className='navbar-link'>Profile</Nav.Link>}
                 {user && <Nav.Link href='/login' className='navbar-link'>Logout</Nav.Link>}
                 {/* <Nav.Link as={Link} to='/form' className='navbar-link'>New Form</Nav.Link> */}
                 <NavDropdown title="Conference Registration" id="offcanvasNavbarDropdown">
@@ -44,9 +46,11 @@ export default function NavMenu() {
                   <NavDropdown.Item href='/demoform'>Conference Demographic Form</NavDropdown.Item>
                   <NavDropdown.Item href="/sessionsform">Conference Sessions Form</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/form">
-                    New form
-                  </NavDropdown.Item>
+                  {!registration &&
+                    <NavDropdown.Item href="/form">
+                      New form
+                    </NavDropdown.Item>
+                  }
                 </NavDropdown>
                 {user &&
                   <NavDropdown title="Admin Dashboard" id="offcanvasNavbarDropdown">

@@ -2,34 +2,34 @@ import React, { useState } from 'react';
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
 import './Confirmation.css';
 
-export default function Confirmation({ formData, setFormData }) {
+export default function Confirmation() {
 
-    const user = JSON.parse(localStorage.getItem('user'));
-    const sessions = JSON.parse(localStorage.getItem('sessions'));
-    const stuff = JSON.parse(localStorage.getItem('stuff'));
-    const dates = JSON.parse(localStorage.getItem('dates'));
+    //const user = JSON.parse(localStorage.getItem('user'));
+    const form1 = JSON.parse(localStorage.getItem('form1'));
+    const form2 = JSON.parse(localStorage.getItem('form2'));
+    const form3 = JSON.parse(localStorage.getItem('form3'));
 
     const [registrationData, setRegistrationData] = useState({
-        email: '',
+        text0: '',
         text1: '',
         text2: '',
-        firstName: '',
-        lastName: '',
-        confirmed: '',
-        nationality: '',
-        other: '',
-        occupation: '',
+        text3: '',
+        text4: '',
+        text5: '',
+        text6: '',
+        text7: '',
+        text8: '',
         confDate:  '',
     });
 
-    const handleConferenceRegistration = () => {
-        alert('Form Submitted');
-        console.log(formData);
-        localStorage.setItem('dates', JSON.stringify({confDate: formData.confDate, nationality:  formData.nationality, other:  formData.other, occupation: formData.occupation}));
-        localStorage.setItem('sessions', JSON.stringify({email:  formData.email, text1:  formData.text1, text2:  formData.text2}));
-        localStorage.setItem('stuff', JSON.stringify({firstName:  formData.firstName, lastName:  formData.lastName, confirmed:  formData.confirmed}));
-
-    };
+    // const handleConferenceRegistration = () => {
+    //     alert('Registration Submitted');
+    //     console.log('This is the final registration data', registrationData);
+    //     localStorage.setItem('registration', JSON.stringify(registrationData));
+    //     localStorage.setItem('dates', JSON.stringify({confDate: registrationData.confDate, nationality:  registrationData.nationality, other:  registrationData.other, occupation: registrationData.occupation}));
+    //     localStorage.setItem('sessions', JSON.stringify({email:  registrationData.email, text1:  registrationData.text1, text2:  registrationData.text2}));
+    //     localStorage.setItem('stuff', JSON.stringify({firstName:  registrationData.firstName, lastName:  registrationData.lastName, confirmed:  registrationData.confirmed}));
+    // };
 
 
     return (
@@ -37,15 +37,15 @@ export default function Confirmation({ formData, setFormData }) {
             <Form className='conf-confirmation'>
                 <Form.Group>
 
-                    <FloatingLabel className='confirmation-label' htmlFor='firstName'>First Name:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text0'>Text 0:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={user.firstName}
-                        onChange={(event) => setFormData({ ...formData, firstName: event.target.value })} />
+                        defaultValue={form1.text0}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text0: event.target.value })} />
 
-                    <FloatingLabel className='confirmation-label' htmlFor='lastName'>Last Name:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text1'>Text 1:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={user.lastName}
-                        onChange={(event) => setFormData({ ...formData, lastName: event.target.value })}
+                        defaultValue={form1.text1}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text1: event.target.value })}
                     />
                 </Form.Group>
 
@@ -53,44 +53,44 @@ export default function Confirmation({ formData, setFormData }) {
 
                     <FloatingLabel className='confirmation-label' htmlFor='confDate'>Date Attending:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={dates.confDate}
-                        onChange={(event) => setFormData({ ...formData, confDate: event.target.value })}
+                        defaultValue={form3.confDate}
+                        onChange={(event) => setRegistrationData({ ...registrationData, confDate: event.target.value })}
                     />
 
-                    <FloatingLabel className='confirmation-label' htmlFor='nationality'>Nationality:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text6'>Text 6:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={dates.nationality}
-                        onChange={(event) => setFormData({ ...formData, nationality: event.target.value })}
-                    />
-                </Form.Group>
-
-                <Form.Group>
-
-                    <FloatingLabel className='confirmation-label' htmlFor='email'>Email:  </FloatingLabel>
-                    <Form.Control
-                        defaultValue={sessions.email}
-                        onChange={(event) => setFormData({ ...formData, email: event.target.value })}
-                    />
-
-                    <FloatingLabel className='confirmation-label' htmlFor='text1'>Text1:  </FloatingLabel>
-                    <Form.Control
-                        defaultValue={sessions.text1}
-                        onChange={(event) => setFormData({ ...formData, text1: event.target.value })}
+                        defaultValue={form3.text6}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text6: event.target.value })}
                     />
                 </Form.Group>
 
                 <Form.Group>
 
-                    <FloatingLabel className='confirmation-label' htmlFor='firstName'>First Name:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text3'>Text 3:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={stuff.firstName}
-                        onChange={(event) => setFormData({ ...formData, firstName: event.target.value })}
+                        defaultValue={form2.text3}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text3: event.target.value })}
                     />
 
-                    <FloatingLabel className='confirmation-label' htmlFor='lastName'>Last Name:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text2'>Text 2:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={stuff.lastName}
-                        onChange={(event) => setFormData({ ...formData, lastName: event.target.value })}
+                        defaultValue={form1.text2}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text2: event.target.value })}
+                    />
+                </Form.Group>
+
+                <Form.Group>
+
+                    <FloatingLabel className='confirmation-label' htmlFor='text7'>Text 7:  </FloatingLabel>
+                    <Form.Control
+                        defaultValue={form3.text7}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text7: event.target.value })}
+                    />
+
+                    <FloatingLabel className='confirmation-label' htmlFor='text8'>Text 8:  </FloatingLabel>
+                    <Form.Control
+                        defaultValue={form3.text8}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text8: event.target.value })}
                     />
                 </Form.Group>
 
@@ -123,7 +123,7 @@ export default function Confirmation({ formData, setFormData }) {
                     <option value='saturdayOnly'>Saturday, May 14 Only</option>
                 </Form.Select> */}
             </Form>
-            <Button onClick={handleConferenceRegistration}>What does this do?</Button>
+            {/* <Button onClick={handleConferenceRegistration}>Save final conference info</Button> */}
         </div>
     )
 
