@@ -4,9 +4,10 @@ import { Card, Container, CardGroup, FloatingLabel, Button, Form } from 'react-b
 
 
 import './Profile.css';
+import axios from 'axios';
 
 
-//const API = 'http://localhost:1337/api/users/me';
+const profileDemoAPI = '/profile/profile';
 
 export default function Profile() {
     //const id = JSON.parse(localStorage.getItem('user.id'));
@@ -25,6 +26,8 @@ export default function Profile() {
     //setDemographics(demographicData);
     // }, [id]);
     const history = useHistory();
+
+    // const [errMsg, setErrMsg] = useState('');
 
     const [demographicData, setDemographicData] = useState({
         address: '',
@@ -50,149 +53,165 @@ export default function Profile() {
     // }, []);
 
 
+    const handleDemoAdd = async (e) => {
+        e.preventDefault();
 
-    // const handleDemoAdd = (e) => {
-    //     e.preventDefault();
-    //     //setDemographic = { address, city, state, zip, phone };
-    //     const response = JSON.stringify( address, city, state, zip, phone );
-    //     console.log('Submitting....');
-    //     alert('Thank you for updating your profile!  Please wait while we save your information');
-    //     console.log(response);
-    //     localStorage.setItem('demographic', JSON.stringify(response));
-    //     history.push('/profile');
-    //     window.location.reload();
-    // }
+        try {
+            const response = await axios.post(profileDemoAPI,
+                JSON.stringify({
+                    identifier: user.username,
+                    password: user.password,
+                    username: user.username,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    address: demographic.address,
+                    city: demographic.city,
+                    state: demographic.state,
+                    zip: demographic.zip,
+                    phone: demographic.phone,
+                }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
 
+                }
+            );
+            console.log(response.data);
+        } catch (err) {
+            console.warn(err);
+        }
 
-    return (
-        <>
-            <div>
-                {!demographic ? (
-                    <div>
-                        <h3 className='text-center'>{user.firstName}, please provide your mailing address</h3>
-                        <Form className='demo-form' >
-                            <FloatingLabel className='demo-label' htmlFor='address'>Address:  </FloatingLabel>
-                            <Form.Control
-                                className='demo-input'
-                                type='text'
-                                id='address'
-                                value={demographicData.address}
-                                onChange={e => setDemographicData({...demographicData, address:  e.target.value})}
-                            //required
-                            />
-
-                            <FloatingLabel className='demo-label' htmlFor='city'>City:  </FloatingLabel>
-                            <Form.Control
-                                className='demo-input'
-                                type='text'
-                                id='city'
-                                value={demographicData.city}
-                                onChange={e => setDemographicData({...demographicData, city:  e.target.value})}
-                            //required
-                            />
-
-                            <FloatingLabel className='demo-label' htmlFor='state'>State:  </FloatingLabel>
-                            <Form.Control
-                                className='demo-input'
-                                type='text'
-                                id='state'
-                                value={demographicData.state}
-                                onChange={e => setDemographicData({...demographicData, state:  e.target.value})}
-                            //required
-                            />
-
-                            <FloatingLabel className='demo-label' htmlFor='zip'>Zip:  </FloatingLabel>
-                            <Form.Control
-                                className='demo-input'
-                                type='text'
-                                id='zip'
-                                value={demographicData.zip}
-                                onChange={e => setDemographicData({...demographicData, zip:  e.target.value})}
-                            //required
-                            />
-
-                            <FloatingLabel className='demo-label' htmlFor='phone'>Phone:  </FloatingLabel>
-                            <Form.Control
-                                className='demo-input'
-                                type='text'
-                                id='phone'
-                                value={demographicData.phone}
-                                onChange={e => setDemographicData({...demographicData, phone:  e.target.value})}
-                            //required
-                            />
-
-                            <Button type='submit' className='demo-button' onClick={() => {
-                                alert('Thank you for updating your profile!  Please wait while we save your information');
-                                console.log(demographicData);
-                                localStorage.setItem('demographic', JSON.stringify({ demographicData }));
-                                history.push('/profile');
-                                window.location.reload();
-                            }}>Update Profile </Button>
-                            <Button type='close' className='close-button'>Skip</Button>
-                        </Form>
-                    </div>
-
-                ) : (
+    }
 
 
-                    <Container as='div' className='showUsers mt-4'>
-                        {/* <h3>This will show the raw data for all demographics - curly brace JSON.stringify(user).  This is using localStorage via const user = JSON.parse(localStorage.getItem('user'));</h3>
+return (
+    <>
+        <div>
+            {!demographic ? (
+                <div>
+                    <h3 className='text-center'>{user.firstName}, please provide your mailing address</h3>
+                    <Form className='demo-form' onSubmit={handleDemoAdd}>
+                        <FloatingLabel className='demo-label' htmlFor='address'>Address:  </FloatingLabel>
+                        <Form.Control
+                            className='demo-input'
+                            type='text'
+                            id='address'
+                            value={demographicData.address}
+                            onChange={e => setDemographicData({ ...demographicData, address: e.target.value })}
+                        //required
+                        />
+
+                        <FloatingLabel className='demo-label' htmlFor='city'>City:  </FloatingLabel>
+                        <Form.Control
+                            className='demo-input'
+                            type='text'
+                            id='city'
+                            value={demographicData.city}
+                            onChange={e => setDemographicData({ ...demographicData, city: e.target.value })}
+                        //required
+                        />
+
+                        <FloatingLabel className='demo-label' htmlFor='state'>State:  </FloatingLabel>
+                        <Form.Control
+                            className='demo-input'
+                            type='text'
+                            id='state'
+                            value={demographicData.state}
+                            onChange={e => setDemographicData({ ...demographicData, state: e.target.value })}
+                        //required
+                        />
+
+                        <FloatingLabel className='demo-label' htmlFor='zip'>Zip:  </FloatingLabel>
+                        <Form.Control
+                            className='demo-input'
+                            type='text'
+                            id='zip'
+                            value={demographicData.zip}
+                            onChange={e => setDemographicData({ ...demographicData, zip: e.target.value })}
+                        //required
+                        />
+
+                        <FloatingLabel className='demo-label' htmlFor='phone'>Phone:  </FloatingLabel>
+                        <Form.Control
+                            className='demo-input'
+                            type='text'
+                            id='phone'
+                            value={demographicData.phone}
+                            onChange={e => setDemographicData({ ...demographicData, phone: e.target.value })}
+                        //required
+                        />
+
+                        <Button type='submit' className='demo-button' onClick={() => {
+                            alert('Thank you for updating your profile!  Please wait while we save your information');
+                            console.log(demographicData);
+                            localStorage.setItem('demographic', JSON.stringify({ demographicData }));
+                            history.push('/profile');
+                            window.location.reload();
+                        }}>Update Profile </Button>
+                        <Button type='close' className='close-button'>Skip</Button>
+                    </Form>
+                </div>
+
+            ) : (
+
+
+                <Container as='div' className='showUsers mt-4'>
+                    {/* <h3>This will show the raw data for all demographics - curly brace JSON.stringify(user).  This is using localStorage via const user = JSON.parse(localStorage.getItem('user'));</h3>
                 <p>{JSON.stringify(user)}</p> */}
-                        <h2 className='text-center'><strong>{user.firstName} {user.lastName}'s Profile</strong></h2>
-                        <h6 className='text-center'> info is showing from localStorage</h6>
-                        <CardGroup>
-                            <Card className='profile-card'>
-                                <Card.Header className='user-header text-center'>
-                                    User Summary
-                                </Card.Header>
-                                <Card.Body className='profile-body text-center'>
-                                    User Id:  {user.id}
+                    <h2 className='text-center'><strong>{user.firstName} {user.lastName}'s Profile</strong></h2>
+                    <h6 className='text-center'> info is showing from localStorage</h6>
+                    <CardGroup>
+                        <Card className='profile-card'>
+                            <Card.Header className='user-header text-center'>
+                                User Summary
+                            </Card.Header>
+                            <Card.Body className='profile-body text-center'>
+                                User Id:  {user.id}
+                                <br />
+                                Username:  {user.username}
+                                <br />
+                                User Email:  {user.email}
+
+                            </Card.Body>
+                        </Card>
+
+                        <Card className='profile-card'>
+                            <Card.Header className='user-header text-center'>
+                                Demographics
+                            </Card.Header>
+                            <Card.Body className='profile-body text-center'>
+                                Mailing Address:  {demographic.demographicData.address}
+                                <br />
+                                City:  {demographic.demographicData.city}
+                                <br />
+                                State:  {demographic.demographicData.state}
+                                <br />
+                                Zip:  {demographic.demographicData.zip}
+                            </Card.Body>
+                        </Card>
+
+                        <Card className='profile-card'>
+                            <Card.Header className='user-header text-center'>
+                                2022 Conference Registration Summary
+                            </Card.Header>
+                            <Card.Body className='profile-body text-center'>
+                                <Card.Text>
+                                    Conference Date(s):  {registration.formData.confDate}
                                     <br />
-                                    Username:  {user.username}
+                                    Text2:  {registration.formData.text2}
                                     <br />
-                                    User Email:  {user.email}
-
-                                </Card.Body>
-                            </Card>
-
-                            <Card className='profile-card'>
-                                <Card.Header className='user-header text-center'>
-                                    Demographics
-                                </Card.Header>
-                                <Card.Body className='profile-body text-center'>
-                                    Mailing Address:  {demographic.demographicData.address}
+                                    Text0:  {registration.formData.text0}
                                     <br />
-                                    City:  {demographic.demographicData.city}
-                                    <br />
-                                    State:  {demographic.demographicData.state}
-                                    <br />
-                                    Zip:  {demographic.demographicData.zip}
-                                </Card.Body>
-                            </Card>
-
-                            <Card className='profile-card'>
-                                <Card.Header className='user-header text-center'>
-                                    2022 Conference Registration Summary
-                                </Card.Header>
-                                <Card.Body className='profile-body text-center'>
-                                    <Card.Text>
-                                        Conference Date(s):  {registration.formData.confDate}
-                                        <br />
-                                        Text2:  {registration.formData.text2}
-                                        <br />
-                                        Text0:  {registration.formData.text0}
-                                        <br />
-                                        Text1:  {registration.formData.text1}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </CardGroup>
-                    </Container>
+                                    Text1:  {registration.formData.text1}
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </CardGroup>
+                </Container>
 
 
-                )}
-            </div>
-        </>
+            )}
+        </div>
+    </>
 
-    );
+);
 }
