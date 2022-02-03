@@ -68,6 +68,7 @@ export default function Form() {
                                 localStorage.setItem('dates', JSON.stringify({confDate: formData.confDate, nationality:  formData.nationality, other:  formData.other, occupation: formData.occupation}));
                                 localStorage.setItem('sessions', JSON.stringify({email:  formData.email, text1:  formData.text1, text2:  formData.text2}));
                                 localStorage.setItem('stuff', JSON.stringify({firstName:  formData.firstName, lastName:  formData.lastName, confirmed:  formData.confirmed}));
+                                localStorage.setItem('registration', JSON.stringify({formData}));
                                 setPage((currPage) => currPage + 1);
                             } else { 
                                 setPage((currPage) => currPage + 1);

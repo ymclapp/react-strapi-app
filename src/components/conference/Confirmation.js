@@ -23,14 +23,14 @@ export default function Confirmation() {
         confDate:  '',
     });
 
-    const handleConferenceRegistration = () => {
-        alert('Registration Submitted');
-        console.log('This is the final registration data', registrationData);
-        localStorage.setItem('registration', JSON.stringify(registrationData));
-        localStorage.setItem('dates', JSON.stringify({confDate: registrationData.confDate, nationality:  registrationData.nationality, other:  registrationData.other, occupation: registrationData.occupation}));
-        localStorage.setItem('sessions', JSON.stringify({email:  registrationData.email, text1:  registrationData.text1, text2:  registrationData.text2}));
-        localStorage.setItem('stuff', JSON.stringify({firstName:  registrationData.firstName, lastName:  registrationData.lastName, confirmed:  registrationData.confirmed}));
-    };
+    // const handleConferenceRegistration = () => {
+    //     alert('Registration Submitted');
+    //     console.log('This is the final registration data', registrationData);
+    //     localStorage.setItem('registration', JSON.stringify(registrationData));
+    //     localStorage.setItem('dates', JSON.stringify({confDate: registrationData.confDate, nationality:  registrationData.nationality, other:  registrationData.other, occupation: registrationData.occupation}));
+    //     localStorage.setItem('sessions', JSON.stringify({email:  registrationData.email, text1:  registrationData.text1, text2:  registrationData.text2}));
+    //     localStorage.setItem('stuff', JSON.stringify({firstName:  registrationData.firstName, lastName:  registrationData.lastName, confirmed:  registrationData.confirmed}));
+    // };
 
 
     return (
@@ -124,7 +124,7 @@ export default function Confirmation() {
                     <option value='saturdayOnly'>Saturday, May 14 Only</option>
                 </Form.Select> */}
             </Form>
-            <Button onClick={handleConferenceRegistration}>Save final conference info</Button>
+            {/* <Button onClick={handleConferenceRegistration}>Save final conference info</Button> */}
         </div>
     )
 
