@@ -1,5 +1,5 @@
-//import React, { useEffect, useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Card, Container, CardGroup, FloatingLabel, Button, Form } from 'react-bootstrap';
 
 
@@ -24,12 +24,44 @@ export default function Profile() {
     //setProfile(data?.data);
     //setDemographics(demographicData);
     // }, [id]);
+    const history = useHistory();
 
+    const [demographicData, setDemographicData] = useState({
+        address: '',
+        city: '',
+        state: '',
+        zip: '',
+        phone: '',
+
+    });
 
 
     const user = JSON.parse(localStorage.getItem('user'));
     const registration = JSON.parse(localStorage.getItem('registration'));
     const demographic = JSON.parse(localStorage.getItem('demographic'));
+
+
+    // useEffect(() => {
+    //     const demo = JSON.stringify(localStorage.getItem('demographic'));
+    //     if (demo) {
+    //         const demoFound = JSON.stringify(demographic);
+    //         setDemographic(demoFound);
+    //     }
+    // }, []);
+
+
+
+    // const handleDemoAdd = (e) => {
+    //     e.preventDefault();
+    //     //setDemographic = { address, city, state, zip, phone };
+    //     const response = JSON.stringify( address, city, state, zip, phone );
+    //     console.log('Submitting....');
+    //     alert('Thank you for updating your profile!  Please wait while we save your information');
+    //     console.log(response);
+    //     localStorage.setItem('demographic', JSON.stringify(response));
+    //     history.push('/profile');
+    //     window.location.reload();
+    // }
 
 
     return (
@@ -38,14 +70,14 @@ export default function Profile() {
                 {!demographic ? (
                     <div>
                         <h3 className='text-center'>{user.firstName}, please provide your mailing address</h3>
-                        <Form className='demo-form'>
+                        <Form className='demo-form' >
                             <FloatingLabel className='demo-label' htmlFor='address'>Address:  </FloatingLabel>
                             <Form.Control
                                 className='demo-input'
                                 type='text'
                                 id='address'
-                            //onChange={e => setPassword(e.target.value)}
-                            //value={password}
+                                value={demographicData.address}
+                                onChange={e => setDemographicData({...demographicData, address:  e.target.value})}
                             //required
                             />
 
@@ -54,11 +86,50 @@ export default function Profile() {
                                 className='demo-input'
                                 type='text'
                                 id='city'
-                            //onChange={e => setPassword(e.target.value)}
-                            //value={password}
+                                value={demographicData.city}
+                                onChange={e => setDemographicData({...demographicData, city:  e.target.value})}
                             //required
                             />
-                            <Button type='submit' className='demo-button'>Update Profile </Button>
+
+                            <FloatingLabel className='demo-label' htmlFor='state'>State:  </FloatingLabel>
+                            <Form.Control
+                                className='demo-input'
+                                type='text'
+                                id='state'
+                                value={demographicData.state}
+                                onChange={e => setDemographicData({...demographicData, state:  e.target.value})}
+                            //required
+                            />
+
+                            <FloatingLabel className='demo-label' htmlFor='zip'>Zip:  </FloatingLabel>
+                            <Form.Control
+                                className='demo-input'
+                                type='text'
+                                id='zip'
+                                value={demographicData.zip}
+                                onChange={e => setDemographicData({...demographicData, zip:  e.target.value})}
+                            //required
+                            />
+
+                            {/* <FloatingLabel className='demo-label' htmlFor='phone'>Phone:  </FloatingLabel> */}
+                            <Form.Control
+                                className='demo-input'
+                                placeholder='Phone...'
+                                type='text'
+                                id='phone'
+                                value={demographicData.phone}
+                                onChange={e => setDemographicData({...demographicData, phone:  e.target.value})}
+                            //required
+                            />
+
+                            <Button type='submit' className='demo-button' onClick={() => {
+                                alert('Thank you for updating your profile!  Please wait while we save your information');
+                                console.log(demographicData);
+                                localStorage.setItem('demographic', JSON.stringify({ demographicData }));
+                                history.push('/profile');
+                                window.location.reload();
+                            }}>Update Profile </Button>
+                            <Button type='close' className='close-button'>Skip</Button>
                         </Form>
                     </div>
 
@@ -90,13 +161,13 @@ export default function Profile() {
                                     Demographics
                                 </Card.Header>
                                 <Card.Body className='profile-body text-center'>
-                                    Mailing Address:  {user.id}
+                                    Mailing Address:  {demographic.demographicData.address}
                                     <br />
-                                    City:  {user.username}
+                                    City:  {demographic.demographicData.city}
                                     <br />
-                                    State:  {user.email}
+                                    State:  {demographic.demographicData.state}
                                     <br />
-                                    Zip:  {user.roles}
+                                    Zip:  {demographic.demographicData.zip}
                                 </Card.Body>
                             </Card>
 
@@ -110,7 +181,7 @@ export default function Profile() {
                                         <br />
                                         Text2:  {registration.formData.text2}
                                         <br />
-                                        Occupation:  {registration.formData.occupation}
+                                        Text0:  {registration.formData.text0}
                                         <br />
                                         Text1:  {registration.formData.text1}
                                     </Card.Text>

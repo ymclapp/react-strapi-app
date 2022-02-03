@@ -4,22 +4,21 @@ import './Confirmation.css';
 
 export default function Confirmation() {
 
-    const user = JSON.parse(localStorage.getItem('user'));
-    const sessions = JSON.parse(localStorage.getItem('sessions'));
-    const stuff = JSON.parse(localStorage.getItem('stuff'));
-    const dates = JSON.parse(localStorage.getItem('dates'));
+    //const user = JSON.parse(localStorage.getItem('user'));
+    const form1 = JSON.parse(localStorage.getItem('form1'));
+    const form2 = JSON.parse(localStorage.getItem('form2'));
+    const form3 = JSON.parse(localStorage.getItem('form3'));
 
     const [registrationData, setRegistrationData] = useState({
-        email: '',
+        text0: '',
         text1: '',
         text2: '',
-        firstName: '',
-        lastName: '',
-        confirmed: '',
-        yes:  '',
-        nationality: '',
-        other: '',
-        occupation: '',
+        text3: '',
+        text4: '',
+        text5: '',
+        text6: '',
+        text7: '',
+        text8: '',
         confDate:  '',
     });
 
@@ -38,15 +37,15 @@ export default function Confirmation() {
             <Form className='conf-confirmation'>
                 <Form.Group>
 
-                    <FloatingLabel className='confirmation-label' htmlFor='firstName'>First Name:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text0'>Text 0:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={user.firstName}
-                        onChange={(event) => setRegistrationData({ ...registrationData, firstName: event.target.value })} />
+                        defaultValue={form1.text0}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text0: event.target.value })} />
 
-                    <FloatingLabel className='confirmation-label' htmlFor='lastName'>Last Name:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text1'>Text 1:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={user.lastName}
-                        onChange={(event) => setRegistrationData({ ...registrationData, lastName: event.target.value })}
+                        defaultValue={form1.text1}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text1: event.target.value })}
                     />
                 </Form.Group>
 
@@ -54,44 +53,44 @@ export default function Confirmation() {
 
                     <FloatingLabel className='confirmation-label' htmlFor='confDate'>Date Attending:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={dates.confDate}
+                        defaultValue={form3.confDate}
                         onChange={(event) => setRegistrationData({ ...registrationData, confDate: event.target.value })}
                     />
 
-                    <FloatingLabel className='confirmation-label' htmlFor='nationality'>Nationality:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text6'>Text 6:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={dates.nationality}
-                        onChange={(event) => setRegistrationData({ ...registrationData, nationality: event.target.value })}
+                        defaultValue={form3.text6}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text6: event.target.value })}
                     />
                 </Form.Group>
 
                 <Form.Group>
 
-                    <FloatingLabel className='confirmation-label' htmlFor='email'>Email:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text3'>Text 3:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={sessions.email}
-                        onChange={(event) => setRegistrationData({ ...registrationData, email: event.target.value })}
+                        defaultValue={form2.text3}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text3: event.target.value })}
                     />
 
-                    <FloatingLabel className='confirmation-label' htmlFor='text1'>Text1:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text2'>Text 2:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={sessions.text1}
-                        onChange={(event) => setRegistrationData({ ...registrationData, text1: event.target.value })}
+                        defaultValue={form1.text2}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text2: event.target.value })}
                     />
                 </Form.Group>
 
                 <Form.Group>
 
-                    <FloatingLabel className='confirmation-label' htmlFor='firstName'>First Name:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text7'>Text 7:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={stuff.firstName}
-                        onChange={(event) => setRegistrationData({ ...registrationData, firstName: event.target.value })}
+                        defaultValue={form3.text7}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text7: event.target.value })}
                     />
 
-                    <FloatingLabel className='confirmation-label' htmlFor='lastName'>Last Name:  </FloatingLabel>
+                    <FloatingLabel className='confirmation-label' htmlFor='text8'>Text 8:  </FloatingLabel>
                     <Form.Control
-                        defaultValue={stuff.lastName}
-                        onChange={(event) => setRegistrationData({ ...registrationData, lastName: event.target.value })}
+                        defaultValue={form3.text8}
+                        onChange={(event) => setRegistrationData({ ...registrationData, text8: event.target.value })}
                     />
                 </Form.Group>
 
