@@ -108,16 +108,16 @@ const Registration = () => {
     return (
         <>
             {success ? (
-                <section className='reg-section'>
-                    <h1>Success!</h1>
+                <section className='reg-section text-center'>
+                    <h2>Thank you for registering!  Please Sign In!</h2>
                     <p>
-                        <a href='/login' className='ahref'>Sign In</a>
+                        <Button a href='/login' className='ahref'>Sign In</Button>
                     </p>
                 </section>
             ) : (
                 <section className='reg-section ats-background-logo'>
                     <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errMsg}</p>
-                    <h1 className='reg-title text-center'> Register</h1>
+                    <h2 className='reg-title text-center'> Register</h2>
                     <Form className='reg-form' onSubmit={handleRegistrationSubmit}>
 
                         <FloatingLabel className='reg-label' htmlFor='username'>

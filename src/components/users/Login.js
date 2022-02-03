@@ -104,7 +104,7 @@ const Login = () => {
 if (user) {
     return (
         <div className='text-center'>
-            <h1 className='not_header'>Welcome {user.firstName}!</h1>
+            <h2 className='not_header'>Welcome {user.firstName}!</h2>
             <br />
             <Button onClick={handleLogout}>Logout</Button>            
         </div>
@@ -116,7 +116,7 @@ if (user) {
         <>
             {success ? (
                 <section>
-                    <h1>{user.firstName}, you are logged in!</h1>
+                    <h2>{user.firstName}, you are logged in!</h2>
                     {/* <h1>{JSON.stringify(user.username)}</h1> */}
                     <br />
                     <p>
@@ -128,7 +128,7 @@ if (user) {
 
                 <section className='login-section ats-background-logo'>
                     <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errMsg}</p>
-                    <h1 className='login-title text-center'>Sign In</h1>
+                    <h2 className='login-title text-center'>Sign In</h2>
 
                     <Form className='login-form' onSubmit={handleLoginSubmit}>
 
