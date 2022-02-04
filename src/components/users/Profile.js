@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 import { Card, Container, CardGroup, FloatingLabel, Button, Form } from 'react-bootstrap';
 
 
 import './Profile.css';
+import axios from 'axios';
 
 
-//const API = 'http://localhost:1337/api/users/me';
+const profileDemoAPI = '/profiles';
 
 export default function Profile() {
     //const id = JSON.parse(localStorage.getItem('user.id'));
@@ -24,16 +25,20 @@ export default function Profile() {
     //setProfile(data?.data);
     //setDemographics(demographicData);
     // }, [id]);
-    const history = useHistory();
 
-    const [demographicData, setDemographicData] = useState({
-        address: '',
-        city: '',
-        state: '',
-        zip: '',
-        phone: '',
 
-    });
+    //const history = useHistory();
+
+    // const [errMsg, setErrMsg] = useState('');
+
+    //const [demographicData, setDemographicData] = useState({
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zip, setZip] = useState('');
+    const [phone, setPhone] = useState('');
+
+    // });
 
 
     const user = JSON.parse(localStorage.getItem('user'));
@@ -42,26 +47,68 @@ export default function Profile() {
 
 
     // useEffect(() => {
-    //     const demo = JSON.stringify(localStorage.getItem('demographic'));
-    //     if (demo) {
-    //         const demoFound = JSON.stringify(demographic);
-    //         setDemographic(demoFound);
-    //     }
-    // }, []);
+    //     const demographic = localStorage.setItem('demographic', JSON.stringify({
+    //         username: user.username,
+    //         firstName: user.firstName,
+    //         lastName: user.lastName,
+    //         address: demographicData.address,
+    //         city: demographicData.city,
+    //         state: demographicData.state,
+    //         zip: demographicData.zip,
+    //         phone: demographicData.phone,
+    //     }));
+    // }, []); 
 
 
+    const handleDemoAdd = async (e) => {
+        e.preventDefault();
+        // const demographicData = localStorage.setItem('demographic', JSON.stringify({data: {
+        //     username: user.username,
+        //     firstName: user.firstName,
+        //     lastName: user.lastName,
+        //     address: demographic.address,
+        //     city: demographicData.city,
+        //     state: demographicData.state,
+        //     zip: demographicData.zip,
+        //     phone: demographicData.phone,
+        // }}));
 
-    // const handleDemoAdd = (e) => {
-    //     e.preventDefault();
-    //     //setDemographic = { address, city, state, zip, phone };
-    //     const response = JSON.stringify( address, city, state, zip, phone );
-    //     console.log('Submitting....');
-    //     alert('Thank you for updating your profile!  Please wait while we save your information');
-    //     console.log(response);
-    //     localStorage.setItem('demographic', JSON.stringify(response));
-    //     history.push('/profile');
-    //     window.location.reload();
-    // }
+        try {
+            await localStorage.setItem('demographic', JSON.stringify({
+                    address,
+                    city,
+                    state,
+                    zip,
+                    phone,
+            }));
+
+            await localStorage.getItem('demographic');
+            const response = await axios.post(profileDemoAPI,
+                JSON.stringify({
+                    data: {
+                        username: user.username,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        address: demographic.address,
+                        city: demographic.city,
+                        state:  demographic.state,
+                        zip:  demographic.zip,
+                        phone:  demographic.phone,
+                    }}),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+
+                }
+            );
+
+            console.log(response.data);
+            //localStorage.setItem('demographic', response.data);
+
+        } catch (err) {
+            console.warn(err);
+        }
+
+    }
 
 
     return (
@@ -70,14 +117,15 @@ export default function Profile() {
                 {!demographic ? (
                     <div>
                         <h3 className='text-center'>{user.firstName}, please provide your mailing address</h3>
-                        <Form className='demo-form' >
+                        <Form className='demo-form' onSubmit={handleDemoAdd}>
+                            {/* <Form className='demo-form'> */}
                             <FloatingLabel className='demo-label' htmlFor='address'>Address:  </FloatingLabel>
                             <Form.Control
                                 className='demo-input'
                                 type='text'
                                 id='address'
-                                value={demographicData.address}
-                                onChange={e => setDemographicData({...demographicData, address:  e.target.value})}
+                                value={address}
+                                onChange={e => setAddress(e.target.value)}
                             //required
                             />
 
@@ -86,8 +134,8 @@ export default function Profile() {
                                 className='demo-input'
                                 type='text'
                                 id='city'
-                                value={demographicData.city}
-                                onChange={e => setDemographicData({...demographicData, city:  e.target.value})}
+                                value={city}
+                                onChange={e => setCity(e.target.value)}
                             //required
                             />
 
@@ -96,8 +144,8 @@ export default function Profile() {
                                 className='demo-input'
                                 type='text'
                                 id='state'
-                                value={demographicData.state}
-                                onChange={e => setDemographicData({...demographicData, state:  e.target.value})}
+                                value={state}
+                                onChange={e => setState(e.target.value)}
                             //required
                             />
 
@@ -106,8 +154,8 @@ export default function Profile() {
                                 className='demo-input'
                                 type='text'
                                 id='zip'
-                                value={demographicData.zip}
-                                onChange={e => setDemographicData({...demographicData, zip:  e.target.value})}
+                                value={zip}
+                                onChange={e => setZip(e.target.value)}
                             //required
                             />
 
@@ -116,18 +164,20 @@ export default function Profile() {
                                 className='demo-input'
                                 type='text'
                                 id='phone'
-                                value={demographicData.phone}
-                                onChange={e => setDemographicData({...demographicData, phone:  e.target.value})}
+                                value={phone}
+                                onChange={e => setPhone(e.target.value)}
                             //required
                             />
 
-                            <Button type='submit' className='demo-button' onClick={() => {
-                                alert('Thank you for updating your profile!  Please wait while we save your information');
-                                console.log(demographicData);
-                                localStorage.setItem('demographic', JSON.stringify({ demographicData }));
-                                history.push('/profile');
-                                window.location.reload();
-                            }}>Update Profile </Button>
+                            {/* <Button type='submit' className='demo-button' onClick={() => {
+                             alert('Thank you for updating your profile!  Please wait while we save your information');
+                            console.log(demographicData);
+                             localStorage.setItem('demographic', JSON.stringify({ demographicData }));
+                             window.location.reload();
+                             history.push('/profile');
+                        }}>Update Profile </Button> */}
+                            <Button type='submit' className='demo-button'>Update Profile</Button>
+                            {/* <Button type='save' className='demo-save-button' onClick={()=> {localStorage.setItem('demographic', JSON.stringify({ demographic }))}}>Save Info</Button> */}
                             <Button type='close' className='close-button'>Skip</Button>
                         </Form>
                     </div>
@@ -160,32 +210,48 @@ export default function Profile() {
                                     Demographics
                                 </Card.Header>
                                 <Card.Body className='profile-body text-center'>
-                                    Mailing Address:  {demographic.demographicData.address}
+                                    Mailing Address:  {demographic.data.address}
                                     <br />
-                                    City:  {demographic.demographicData.city}
+                                    City:  {demographic.data.city}
                                     <br />
-                                    State:  {demographic.demographicData.state}
+                                    State:  {demographic.data.state}
                                     <br />
-                                    Zip:  {demographic.demographicData.zip}
+                                    Zip:  {demographic.data.zip}
                                 </Card.Body>
                             </Card>
 
-                            <Card className='profile-card'>
-                                <Card.Header className='user-header text-center'>
-                                    2022 Conference Registration Summary
-                                </Card.Header>
-                                <Card.Body className='profile-body text-center'>
-                                    <Card.Text>
-                                        Conference Date(s):  {registration.formData.confDate}
-                                        <br />
-                                        Text2:  {registration.formData.text2}
-                                        <br />
-                                        Text0:  {registration.formData.text0}
-                                        <br />
-                                        Text1:  {registration.formData.text1}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
+                            {registration ? (
+                                <div>
+                                    <Card className='profile-card'>
+                                        <Card.Header className='user-header text-center'>
+                                            2022 Conference Registration Summary
+                                        </Card.Header>
+                                        <Card.Body className='profile-body text-center'>
+                                            <Card.Text>
+                                                Conference Date(s):  {registration.formData.confDate}
+                                                <br />
+                                                Text2:  {registration.formData.text2}
+                                                <br />
+                                                Text0:  {registration.formData.text0}
+                                                <br />
+                                                Text1:  {registration.formData.text1}
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            ) : (
+                                <Card className='profile-card'>
+                                    <Card.Header className='user-header text-center'>
+                                        Not Yet Registered for the 2022 Conference
+                                    </Card.Header>
+                                    <Card.Body className='profile-body text-center'>
+                                        <Card.Text>
+
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+
+                            )}
                         </CardGroup>
                     </Container>
 
