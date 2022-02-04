@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 import { Card, Container, CardGroup, FloatingLabel, Button, Form } from 'react-bootstrap';
 
 
@@ -7,7 +7,7 @@ import './Profile.css';
 import axios from 'axios';
 
 
-const profileDemoAPI = '/profile/profile';
+const profileDemoAPI = '/profiles';
 
 export default function Profile() {
     //const id = JSON.parse(localStorage.getItem('user.id'));
@@ -25,11 +25,16 @@ export default function Profile() {
     //setProfile(data?.data);
     //setDemographics(demographicData);
     // }, [id]);
-    const history = useHistory();
+
+
+    //const history = useHistory();
 
     // const [errMsg, setErrMsg] = useState('');
 
     const [demographicData, setDemographicData] = useState({
+        username: '',
+        firstName: '',
+        lastName: '',
         address: '',
         city: '',
         state: '',
@@ -50,32 +55,44 @@ export default function Profile() {
     //         const demoFound = JSON.stringify(demographic);
     //         setDemographic(demoFound);
     //     }
-    // }, []);
+    // }, []); 
 
 
     const handleDemoAdd = async (e) => {
         e.preventDefault();
+        // const demographicData = localStorage.setItem('demographic', JSON.stringify({data: {
+        //     username: user.username,
+        //     firstName: user.firstName,
+        //     lastName: user.lastName,
+        //     address: demographicData.address,
+        //     city: demographicData.city,
+        //     state: demographicData.state,
+        //     zip: demographicData.zip,
+        //     phone: demographicData.phone,
+        // }}));
 
         try {
             const response = await axios.post(profileDemoAPI,
-                JSON.stringify({
-                    identifier: user.username,
-                    password: user.password,
+                JSON.stringify({data: {
                     username: user.username,
                     firstName: user.firstName,
                     lastName: user.lastName,
-                    address: demographic.address,
-                    city: demographic.city,
-                    state: demographic.state,
-                    zip: demographic.zip,
-                    phone: demographic.phone,
+                    address: demographicData.address,
+                    city: demographicData.city,
+                    state: demographicData.state,
+                    zip: demographicData.zip,
+                    phone: demographicData.phone,
+                }
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
 
                 }
             );
+
             console.log(response.data);
+            //localStorage.setItem('demographic', response.data);
+            
         } catch (err) {
             console.warn(err);
         }
@@ -90,6 +107,7 @@ return (
                 <div>
                     <h3 className='text-center'>{user.firstName}, please provide your mailing address</h3>
                     <Form className='demo-form' onSubmit={handleDemoAdd}>
+                    {/* <Form className='demo-form'> */}
                         <FloatingLabel className='demo-label' htmlFor='address'>Address:  </FloatingLabel>
                         <Form.Control
                             className='demo-input'
@@ -140,13 +158,14 @@ return (
                         //required
                         />
 
-                        <Button type='submit' className='demo-button' onClick={() => {
-                            alert('Thank you for updating your profile!  Please wait while we save your information');
+                        {/* <Button type='submit' className='demo-button' onClick={() => {
+                             alert('Thank you for updating your profile!  Please wait while we save your information');
                             console.log(demographicData);
-                            localStorage.setItem('demographic', JSON.stringify({ demographicData }));
-                            history.push('/profile');
-                            window.location.reload();
-                        }}>Update Profile </Button>
+                             localStorage.setItem('demographic', JSON.stringify({ demographicData }));
+                             window.location.reload();
+                             history.push('/profile');
+                        }}>Update Profile </Button> */}
+                        <Button type='submit' className='demo-button'>Update Profile</Button>
                         <Button type='close' className='close-button'>Skip</Button>
                     </Form>
                 </div>
@@ -189,6 +208,8 @@ return (
                             </Card.Body>
                         </Card>
 
+                        {registration ? (
+<div>
                         <Card className='profile-card'>
                             <Card.Header className='user-header text-center'>
                                 2022 Conference Registration Summary
@@ -205,6 +226,20 @@ return (
                                 </Card.Text>
                             </Card.Body>
                         </Card>
+                        </div>
+            ) : (
+                <Card className='profile-card'>
+                <Card.Header className='user-header text-center'>
+                    Not Yet Registered for the 2022 Conference
+                </Card.Header>
+                <Card.Body className='profile-body text-center'>
+                    <Card.Text>
+
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+
+            )}
                     </CardGroup>
                 </Container>
 
