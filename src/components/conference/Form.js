@@ -55,12 +55,15 @@ export default function Form() {
         try {
 
             const responseForm1 = await axios.post('http://localhost:1337/api/form1s',
-                JSON.stringify({ data: {
-                    text0: formData.text0,
-                    text1: formData.text1,
-                    text2: formData.text2,
-                
-                }}),
+                JSON.stringify({
+                    data: {
+                        text0: formData.text0,
+                        text1: formData.text1,
+                        text2: formData.text2,
+                        username: user.username,
+
+                    }
+                }),
                 {
                     headers: { 'Content-Type': 'application/json' },
 
@@ -68,34 +71,39 @@ export default function Form() {
             );
             console.log(responseForm1.data);
 
-             const responseForm2 = await axios.post('http://localhost:1337/api/form2s',
-                 JSON.stringify({ data: {
-                
-                text3: formData.text3,
-                text4: user.firstName,
-                text5: user.lastName, 
-            }}),
-                 {
-                     headers: { 'Content-Type': 'application/json' },
+            const responseForm2 = await axios.post('http://localhost:1337/api/form2s',
+                JSON.stringify({
+                    data: {
+                        text3: formData.text3,
+                        text4: user.firstName,
+                        text5: user.lastName,
+                        username:  user.username,
+                    }
+                }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
 
-                 }
-             );
-             console.log(responseForm2.data);
+                }
+            );
+            console.log(responseForm2.data);
 
-             const responseForm3 = await axios.post('http://localhost:1337/api/form3s',
-                 JSON.stringify({ data: {
-                    text6: formData.text6,
-                    text7: formData.text7,
-                    text8: formData.text8,
-                    confDate:  formData.confDate,
-                
-                }}),
-                 {
-                     headers: { 'Content-Type': 'application/json' },
+            const responseForm3 = await axios.post('http://localhost:1337/api/form3s',
+                JSON.stringify({
+                    data: {
+                        text6: formData.text6,
+                        text7: formData.text7,
+                        text8: formData.text8,
+                        confDate: formData.confDate,
+                        userId: user.id,
 
-                 }
-             );
-             console.log(responseForm3.data);
+                    }
+                }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+
+                }
+            );
+            console.log(responseForm3.data);
 
             // }
 
@@ -104,7 +112,7 @@ export default function Form() {
             console.warn(err.message);
         }
 
-}
+    }
 
 
     return (
