@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Card, Container, CardGroup, FloatingLabel, Button, Form } from 'react-bootstrap';
 
 
@@ -7,7 +7,7 @@ import './Profile.css';
 import axios from 'axios';
 
 
-const profileDemoAPI = '/profiles';
+//const profileDemoAPI = '/profiles';
 
 export default function Profile() {
     //const id = JSON.parse(localStorage.getItem('user.id'));
@@ -27,7 +27,7 @@ export default function Profile() {
     // }, [id]);
 
 
-    //const history = useHistory();
+    const history = useHistory();
 
     // const [errMsg, setErrMsg] = useState('');
 
@@ -102,13 +102,18 @@ export default function Profile() {
             );
 
             console.log(response.data);
+            //localStorage.getItem('demographic');
+            history.go('/profile');
+            //window.location.reload();
             //localStorage.setItem('demographic', response.data);
 
         } catch (err) {
             console.warn(err.message);
         }
 
+
     }
+    //history.push('/profile');
 
 
     return (
@@ -177,7 +182,7 @@ export default function Profile() {
                              history.push('/profile');
                         }}>Update Profile </Button> */}
                             <Button type='submit' className='demo-button'>Update Profile</Button>
-                            {/* <Button type='save' className='demo-save-button' onClick={()=> {localStorage.setItem('demographic', JSON.stringify({ demographic }))}}>Save Info</Button> */}
+                            {/* <Button type='submit' className='demo-button' onClick={()=> {history.push('/profile')}}>Update Profile</Button> */}
                             <Button type='close' className='close-button'>Skip</Button>
                         </Form>
                     </div>
@@ -210,13 +215,13 @@ export default function Profile() {
                                     Demographics
                                 </Card.Header>
                                 <Card.Body className='profile-body text-center'>
-                                    Mailing Address:  {demographic.data.address}
+                                    Mailing Address:  {demographic.address}
                                     <br />
-                                    City:  {demographic.data.city}
+                                    City:  {demographic.city}
                                     <br />
-                                    State:  {demographic.data.state}
+                                    State:  {demographic.state}
                                     <br />
-                                    Zip:  {demographic.data.zip}
+                                    Zip:  {demographic.zip}
                                 </Card.Body>
                             </Card>
 
