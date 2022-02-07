@@ -1,77 +1,31 @@
 import React, { useState } from 'react';
-//import { useHistory } from 'react-router-dom';
-import { Card, Container, CardGroup, FloatingLabel, Button, Form } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import { Card, Container, CardGroup, FloatingLabel, Button, Form, CloseButton } from 'react-bootstrap';
 
 
 import './Profile.css';
 import axios from 'axios';
 
 
-const profileDemoAPI = '/profiles';
+//const profileDemoAPI = '/profiles';  //had to hard code to get it to work.  Not sure if it it wasn't picking up the axios baseUrl or what
 
 export default function Profile() {
-    //const id = JSON.parse(localStorage.getItem('user.id'));
 
-    // const [profile, setProfile] = useState();
-    // const [demographics, setDemographics] = useState([]);
-    // const [showAddQuestionModal, setShowAddQuestionModal] = useState(false);
+    const history = useHistory();
 
-    // useEffect(async () => {
-    //if (!id) return;
-    //   const Profiledata = await axios.get(
-    //'http://localhost:1337/users/' + id
-    //);
-    //var demographicData = DemographicData?.data?.demographic;
-    //setProfile(data?.data);
-    //setDemographics(demographicData);
-    // }, [id]);
-
-
-    //const history = useHistory();
-
-    // const [errMsg, setErrMsg] = useState('');
-
-    //const [demographicData, setDemographicData] = useState({
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [zip, setZip] = useState('');
     const [phone, setPhone] = useState('');
 
-    // });
-
-
     const user = JSON.parse(localStorage.getItem('user'));
     const registration = JSON.parse(localStorage.getItem('registration'));
     const demographic = JSON.parse(localStorage.getItem('demographic'));
 
 
-    // useEffect(() => {
-    //     const demographic = localStorage.setItem('demographic', JSON.stringify({
-    //         username: user.username,
-    //         firstName: user.firstName,
-    //         lastName: user.lastName,
-    //         address: demographicData.address,
-    //         city: demographicData.city,
-    //         state: demographicData.state,
-    //         zip: demographicData.zip,
-    //         phone: demographicData.phone,
-    //     }));
-    // }, []); 
-
-
     const handleDemoAdd = async (e) => {
         e.preventDefault();
-        // const demographicData = localStorage.setItem('demographic', JSON.stringify({data: {
-        //     username: user.username,
-        //     firstName: user.firstName,
-        //     lastName: user.lastName,
-        //     address: demographic.address,
-        //     city: demographicData.city,
-        //     state: demographicData.state,
-        //     zip: demographicData.zip,
-        //     phone: demographicData.phone,
-        // }}));
 
         try {
             await localStorage.setItem('demographic', JSON.stringify({
@@ -82,18 +36,17 @@ export default function Profile() {
                     phone,
             }));
 
-            await localStorage.getItem('demographic');
-            const response = await axios.post(profileDemoAPI,
+            const response = await axios.post('http://localhost:1337/api/profiles',
                 JSON.stringify({
                     data: {
                         username: user.username,
                         firstName: user.firstName,
                         lastName: user.lastName,
-                        address: demographic.address,
-                        city: demographic.city,
-                        state:  demographic.state,
-                        zip:  demographic.zip,
-                        phone:  demographic.phone,
+                        address,
+                        city,
+                        state,
+                        zip,
+                        phone,
                     }}),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -102,14 +55,15 @@ export default function Profile() {
             );
 
             console.log(response.data);
-            //localStorage.setItem('demographic', response.data);
+            history.go('/profile');
+
 
         } catch (err) {
-            console.warn(err);
+            console.warn(err.message);
         }
 
-    }
 
+    }
 
     return (
         <>
@@ -118,7 +72,7 @@ export default function Profile() {
                     <div>
                         <h3 className='text-center'>{user.firstName}, please provide your mailing address</h3>
                         <Form className='demo-form' onSubmit={handleDemoAdd}>
-                            {/* <Form className='demo-form'> */}
+
                             <FloatingLabel className='demo-label' htmlFor='address'>Address:  </FloatingLabel>
                             <Form.Control
                                 className='demo-input'
@@ -169,25 +123,14 @@ export default function Profile() {
                             //required
                             />
 
-                            {/* <Button type='submit' className='demo-button' onClick={() => {
-                             alert('Thank you for updating your profile!  Please wait while we save your information');
-                            console.log(demographicData);
-                             localStorage.setItem('demographic', JSON.stringify({ demographicData }));
-                             window.location.reload();
-                             history.push('/profile');
-                        }}>Update Profile </Button> */}
                             <Button type='submit' className='demo-button'>Update Profile</Button>
-                            {/* <Button type='save' className='demo-save-button' onClick={()=> {localStorage.setItem('demographic', JSON.stringify({ demographic }))}}>Save Info</Button> */}
-                            <Button type='close' className='close-button'>Skip</Button>
-                        </Form>
+                          </Form>
                     </div>
 
                 ) : (
 
 
                     <Container as='div' className='showUsers mt-4'>
-                        {/* <h3>This will show the raw data for all demographics - curly brace JSON.stringify(user).  This is using localStorage via const user = JSON.parse(localStorage.getItem('user'));</h3>
-                <p>{JSON.stringify(user)}</p> */}
                         <h2 className='text-center'><strong>{user.firstName} {user.lastName}'s Profile</strong></h2>
                         <h6 className='text-center'> info is showing from localStorage</h6>
                         <CardGroup>
@@ -210,13 +153,13 @@ export default function Profile() {
                                     Demographics
                                 </Card.Header>
                                 <Card.Body className='profile-body text-center'>
-                                    Mailing Address:  {demographic.data.address}
+                                    Mailing Address:  {demographic.address}
                                     <br />
-                                    City:  {demographic.data.city}
+                                    City:  {demographic.city}
                                     <br />
-                                    State:  {demographic.data.state}
+                                    State:  {demographic.state}
                                     <br />
-                                    Zip:  {demographic.data.zip}
+                                    Zip:  {demographic.zip}
                                 </Card.Body>
                             </Card>
 
