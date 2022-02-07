@@ -6,6 +6,8 @@ import PersonalInfo from './PersonalInfo';
 import ConferenceDate from './OtherInfo';
 import Confirmation from './Confirmation';
 
+const registration = JSON.parse(localStorage.getItem('registration'));
+
 export default function Form() {
 
     const history = useHistory();
@@ -76,6 +78,11 @@ export default function Form() {
                     >
                     {/* {page === FormTitles.length - 1 ? 'Confirm' : 'Next'  && history.push('/profile')} */}
                     {page === FormTitles.length - 1 ? 'Confirm' : 'Next'}
+                    {/* {!registration ? (
+                    {page === FormTitles.length - 1 ? 'Confirm' : 'Next'}
+                    ) : (
+                        history.push('/profile')
+                    ))} */}
                 </button>
             </div>
         </div>

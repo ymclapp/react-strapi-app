@@ -82,18 +82,18 @@ export default function Profile() {
                     phone,
             }));
 
-            await localStorage.getItem('demographic');
-            const response = await axios.post(profileDemoAPI,
+            // await localStorage.getItem('demographic');
+            const response = await axios.post('http://localhost:1337/api/profiles',
                 JSON.stringify({
                     data: {
                         username: user.username,
                         firstName: user.firstName,
                         lastName: user.lastName,
-                        address: demographic.address,
-                        city: demographic.city,
-                        state:  demographic.state,
-                        zip:  demographic.zip,
-                        phone:  demographic.phone,
+                        address,
+                        city,
+                        state,
+                        zip,
+                        phone,
                     }}),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -105,7 +105,7 @@ export default function Profile() {
             //localStorage.setItem('demographic', response.data);
 
         } catch (err) {
-            console.warn(err);
+            console.warn(err.message);
         }
 
     }
