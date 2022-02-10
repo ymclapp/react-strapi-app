@@ -25,6 +25,7 @@ import Users from './components/dashboard/Users';
 import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
+import ProductMaint from './components/dashboard/ProductMaint';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const registration = JSON.parse(localStorage.getItem('registration'));
@@ -78,6 +79,7 @@ function App() {
 
             {user &&
               <Route path='/dashboard'>
+                <ProductMaint />
                 <Users />
                 <Demo />
                 <Sessions />

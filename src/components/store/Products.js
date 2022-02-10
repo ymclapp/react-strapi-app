@@ -36,8 +36,7 @@ export default function Products() {
                                 </Card.Text>
                                 <Card.Footer>
                                     <div><span>Product Type:  {product.type}</span></div>
-                                    <div><span>${product.price}</span></div>
-                                    
+                                    <div><span className='text-right'>${product.price}</span></div>                                    
                                 </Card.Footer>
                               </Card.Body>
                         </Card>)}
