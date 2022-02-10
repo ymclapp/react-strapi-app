@@ -25,7 +25,7 @@ export default function Users() {
     return (
         <>
             <Container as='div' className='showUsers mt-4'>
-                <h4>User List</h4>
+                <h4 className='text-center'>User List</h4>
                 {users &&
                     users.map((user, index) =>
                         <Card>

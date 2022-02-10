@@ -13,6 +13,7 @@ import Footer from './components/partials/Footer';
 import Home from './components/pages/Home';
 import Registration from './components/users/Registration';
 import Login from './components/users/Login';
+import Products from './components/store/Products';
 
 //conference
 import Conference from './components/pages/Conference';
@@ -24,6 +25,7 @@ import Users from './components/dashboard/Users';
 import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
+import ProductMaint from './components/dashboard/ProductMaint';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const registration = JSON.parse(localStorage.getItem('registration'));
@@ -56,6 +58,10 @@ function App() {
               <Registration />
             </Route>
 
+            <Route path='/store'>
+              <Products />
+            </Route>
+
             <Route path='/login'>
               <Login />
             </Route>
@@ -73,6 +79,7 @@ function App() {
 
             {user &&
               <Route path='/dashboard'>
+                <ProductMaint />
                 <Users />
                 <Demo />
                 <Sessions />
