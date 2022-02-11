@@ -1,5 +1,10 @@
 import './App.css';
+import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+//Algolia Search
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -27,6 +32,7 @@ import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
 import ProductMaint from './components/dashboard/ProductMaint';
 
+const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
 const user = JSON.parse(localStorage.getItem('user'));
 const registration = JSON.parse(localStorage.getItem('registration'));
 
@@ -37,6 +43,25 @@ function App() {
       <Router>
         <NavMenu />
         <Header />
+        <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
+          <header id="header">
+            <img alt="instant-search-logo" src="instant_search_logo@2x.png" />
+            <SearchBox translations={{ placeholder: 'Search for products' }} />
+          </header>
+          <main>
+            {/* <Content /> */}
+          </main>
+          <footer>
+            Source Code on
+            <a href="https://github.com/algolia/instantsearch.js/tree/v2/docgen/src/examples/demo">
+              Github
+            </a>{' '}
+            - Powered by <a href="https://www.algolia.com">Algolia</a> - Data from{' '}
+            <a href="https://developer.bestbuy.com">Best Buy</a>
+          </footer>
+          <SearchBox translations={{ placeholder: 'Search for Products' }} />
+          <Hits />
+        </InstantSearch>
 
         <div className='main-content'>
 

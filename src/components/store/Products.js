@@ -32,7 +32,7 @@ export default function Products() {
                             <Card.Body>
                                 <Card.Title>Product Title:  {product.attributes.title}</Card.Title>
                                 <Card.Text>
-                                    {product.attributes.description}
+                                    Summary:  {product.attributes.description}
                                 </Card.Text>
                                 <Card.Footer>
                                     <div><span>Product Type:  {product.attributes.type}</span></div>
