@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
 
-const dbAPI = 'http://localhost:8080/api/products';//need to figure out error on getting all
+const dbAPI = 'http://localhost:1337/api/products';//need to figure out error on getting all
 
 //this is just to "get" users to display on the dashboard
 
