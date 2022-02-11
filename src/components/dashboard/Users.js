@@ -28,8 +28,8 @@ export default function Users() {
                 <h4 className='text-center'>User List</h4>
                 {users &&
                     users.map((user, index) =>
-                        <Card>
-                            <Card.Header key={index}>User Id#{user.id}:  {user.firstName} {user.lastName}</Card.Header>
+                        <Card  key={index}>
+                            <Card.Header>User Id#{user.id}:  {user.firstName} {user.lastName}</Card.Header>
                                 Username:  {user.username}
                                 <br/>
                                 User Email:  {user.email}

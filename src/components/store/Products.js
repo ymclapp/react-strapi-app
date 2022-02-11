@@ -8,6 +8,7 @@ const dbAPI = 'http://localhost:1337/api/products';//need to figure out error on
 export default function Products() {
 
     const [products, setProducts] = useState('');
+    //const [products, setProducts] = useState({data:{}});
 
     useEffect(() => {
         getProductsWithFetch();
@@ -25,12 +26,12 @@ export default function Products() {
     return (
         <>
             <Container as='div' className='showProducts mt-4'>
-                <h4>Product List</h4>
+                <h4 className='text-center'>Product List</h4>
                 {products &&
                     products.map((product, index) =>
-                        <Card>
+                        <Card key={index}>
                             <Card.Body>
-                                <Card.Title key={index}>Product Title:  {product.title}</Card.Title>
+                                <Card.Title>Product Title:  {product.title}</Card.Title>
                                 <Card.Text>
                                     {product.description}
                                 </Card.Text>

@@ -60,7 +60,7 @@ export default function Form() {
                         text0: formData.text0,
                         text1: formData.text1,
                         text2: formData.text2,
-                        username: user.username,
+                        // username: user.username,
 
                     }
                 }),
@@ -75,9 +75,9 @@ export default function Form() {
                 JSON.stringify({
                     data: {
                         text3: formData.text3,
-                        text4: user.firstName,
-                        text5: user.lastName,
-                        username:  user.username,
+                        // text4: user.firstName,
+                        // text5: user.lastName,
+                        // username:  user.username,
                     }
                 }),
                 {
@@ -94,7 +94,7 @@ export default function Form() {
                         text7: formData.text7,
                         text8: formData.text8,
                         confDate: formData.confDate,
-                        userId: user.id,
+                        // userId: user.id,
 
                     }
                 }),

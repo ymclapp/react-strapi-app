@@ -25,12 +25,14 @@ export default function ProductMaint() {
         try {
             const response = await axios.post('http://localhost:1337/api/products',
                 JSON.stringify({
+                    data: {
                         title,
                         description,
                         imageUrl,
                         releaseDate,
                         type,
                         price,
+                    }
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
