@@ -7,7 +7,7 @@ const dbAPI = 'http://localhost:1337/api/products';//need to figure out error on
 
 export default function Products() {
 
-    const [products, setProducts] = useState('');
+    const [products, setProducts] = useState({data:[]});
     //const [products, setProducts] = useState({data:{}});
 
     useEffect(() => {
@@ -27,28 +27,29 @@ export default function Products() {
         <>
             <Container as='div' className='showProducts mt-4'>
                 <h4 className='text-center'>Product List</h4>
-                {products &&
-                    products.map((product, index) =>
-                        <Card key={index}>
+                {products.data.map((product) =>
+                        <Card key={product.id}>
                             <Card.Body>
-                                <Card.Title>Product Title:  {product.title}</Card.Title>
+                                <Card.Title>Product Title:  {product.attributes.title}</Card.Title>
                                 <Card.Text>
-                                    {product.description}
+                                    {product.attributes.description}
                                 </Card.Text>
                                 <Card.Footer>
-                                    <div><span>Product Type:  {product.type}</span></div>
-                                    <div><span className='text-right'>${product.price}</span></div>                                    
+                                    <div><span>Product Type:  {product.attributes.type}</span></div>
+                                    <div><span className='text-right'>${product.attributes.price}</span></div>                                    
                                 </Card.Footer>
                               </Card.Body>
                         </Card>)}
-                        {/* <Card>
+                        {/* {products &&
+                    products.map((item, index) =>
+                        <Card key={index}>
                             <Card.Body>
-                                <Card.Title>{product.title}</Card.Title>
+                                <Card.Title>{item.title}</Card.Title>
                                 <Card.Text>
-                                    {product.description}
+                                    {item.description}
                                 </Card.Text>
                               </Card.Body>
-                        </Card> */}
+                        </Card>)} */}
             </Container>
         </>
 

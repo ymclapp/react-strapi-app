@@ -29,7 +29,7 @@ export default function Sessions() {
             <p>{JSON.stringify(sessions.data)}</p> */}
             <ul>
             {sessions.data.map((session) => 
-            <li key={session.id}>Session Id#{session.id} - Session Name:  {session.attributes.name}</li>)}
+            <li key={session.id}>Session Id:  {session.attributes.sessionId} - Session Name:  {session.attributes.name}</li>)}
             </ul>
         </Container >
         </>

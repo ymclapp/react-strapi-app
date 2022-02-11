@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Card, Container, CardGroup, FloatingLabel, Button, Form, CloseButton } from 'react-bootstrap';
+import { Card, Container, CardGroup, FloatingLabel, Button, Form } from 'react-bootstrap';
 
 
 import './Profile.css';
@@ -40,8 +40,8 @@ export default function Profile() {
                 JSON.stringify({
                     data: {
                         username: user.username,
-                        firstName: user.firstName,
-                        lastName: user.lastName,
+                        // firstName: user.firstName,
+                        // lastName: user.lastName,
                         address,
                         city,
                         state,
