@@ -31,7 +31,7 @@ const Login = () => {
     const [user, setUser] = useState();
     const [success, setSuccess] = useState(false);
     const [errMsg, setErrMsg] = useState('');
-    const [jwt, setJwt] = useState('');
+    //const [jwt, setJwt] = useState('');
 
     
     useEffect(() => {

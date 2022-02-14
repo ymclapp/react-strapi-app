@@ -43,14 +43,14 @@ function App() {
       <Router>
         <NavMenu />
         <Header />
-        <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
+        {/* <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
           <header id="header">
             <img alt="instant-search-logo" src="instant_search_logo@2x.png" />
             <SearchBox translations={{ placeholder: 'Search for products' }} />
           </header>
-          <main>
+          <main> */}
             {/* <Content /> */}
-          </main>
+          {/* </main>
           <footer>
             Source Code on
             <a href="https://github.com/algolia/instantsearch.js/tree/v2/docgen/src/examples/demo">
@@ -61,7 +61,7 @@ function App() {
           </footer>
           <SearchBox translations={{ placeholder: 'Search for Products' }} />
           <Hits />
-        </InstantSearch>
+        </InstantSearch> */}
 
         <div className='main-content'>
 

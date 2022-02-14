@@ -1,6 +1,6 @@
 import React from 'react';
-import { Nav, Navbar, Container, Offcanvas, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Nav, Navbar, Container, Offcanvas, NavDropdown } from 'react-bootstrap';
+//import { Link } from 'react-router-dom';
 import '../partials/NavMenu.css';
 import Logo from './img/logo.png'
 
@@ -84,10 +84,10 @@ export default function NavMenu() {
                 />
                 <Button variant="outline-success">Search</Button>
               </Form> */}
-              <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
+              {/* <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
                 <SearchBox />
                 <Hits />
-              </InstantSearch>
+              </InstantSearch> */}
 
               {/* <Nav className='me-auto'>
                 <NavItem className='tab1'>
