@@ -25,6 +25,7 @@ import Home from './components/pages/Home';
 import Registration from './components/users/Registration';
 import Login from './components/users/Login';
 import Products from './components/store/Products';
+import Cart from './components/store/Cart';
 
 //conference
 import Conference from './components/pages/Conference';
@@ -204,6 +205,7 @@ function App() {
 
       <Router>
         <NavMenu />
+        <Cart />
         <Header />
 
         <div className='main-content'>

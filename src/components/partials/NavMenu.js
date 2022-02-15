@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Nav, Navbar, Container, Offcanvas, NavDropdown } from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 import '../partials/NavMenu.css';
-import Logo from './img/logo.png'
+
+import Logo from './img/logo.png';
+
+import CartContext from '../../context/cart/CartContext';
 
 //Algolia Search
 // import algoliasearch from 'algoliasearch/lite';
 // import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 
 export default function NavMenu() {
+  const { cartItems, showHideCart } = useContext(CartContext);
 
   // const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
   const user = JSON.parse(localStorage.getItem('user'));
@@ -27,6 +31,21 @@ export default function NavMenu() {
             />
             {' '}
           </Navbar.Brand>
+          <div className='nav__right'>
+            <div className='cart__icon'>
+              <i
+                className='fa fa-shopping-cart'
+                aria-hidden='true'
+                onClick={showHideCart}
+              />
+              {cartItems.length > 0 && (
+                <div className='item__count'>
+                  <span>{cartItems.length}</span>
+                </div>
+              )}
+            </div>
+          </div>
+
 
           {/* <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
             <SearchBox />
