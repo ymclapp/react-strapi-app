@@ -5,12 +5,12 @@ import '../partials/NavMenu.css';
 import Logo from './img/logo.png'
 
 //Algolia Search
-import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
+// import algoliasearch from 'algoliasearch/lite';
+// import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 
 export default function NavMenu() {
 
-  const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
+  // const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
   const user = JSON.parse(localStorage.getItem('user'));
   const registration = JSON.parse(localStorage.getItem('registration'));
 
@@ -28,10 +28,10 @@ export default function NavMenu() {
             {' '}
           </Navbar.Brand>
 
-          <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
+          {/* <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
             <SearchBox />
             <Hits />
-          </InstantSearch>
+          </InstantSearch> */}
 
           <Navbar.Toggle aria-controls='offcanvasNavbar' />
           <Navbar.Offcanvas
