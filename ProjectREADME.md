@@ -7,12 +7,17 @@
 4.  React-Router-Dom - used 5.3.0 - had to load because pages wouldn't change from home page
 5.  @fortawesome/react-fontawesome, @fortawesome/free-solid-svg-icons, @fortawesome/fontawesome-svg-core
 6.  Axios
+7.  CurrencyFormat
+8.  @algolia/autocomplete-js
+9.  @algolia/autocomplete-theme-classic
+10. algoliasearch
 
 
 
 ##  Referenced:
 1.  https://www.youtube.com/watch?v=wOxP4k9f5rk
 2.  https://www.youtube.com/watch?v=oUZjO00NkhY
+3.  https://codesandbox.io/s/ygtux
 
 ###  1)  index.js:
 1. import { BrowserRouter  } from 'react-router-dom';
