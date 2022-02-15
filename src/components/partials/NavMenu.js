@@ -1,11 +1,16 @@
 import React from 'react';
-import { Nav, Navbar, Container, Offcanvas, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Nav, Navbar, Container, Offcanvas, NavDropdown } from 'react-bootstrap';
+//import { Link } from 'react-router-dom';
 import '../partials/NavMenu.css';
 import Logo from './img/logo.png'
 
+//Algolia Search
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
+
 export default function NavMenu() {
 
+  const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
   const user = JSON.parse(localStorage.getItem('user'));
   const registration = JSON.parse(localStorage.getItem('registration'));
 
@@ -22,6 +27,11 @@ export default function NavMenu() {
             />
             {' '}
           </Navbar.Brand>
+
+          <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
+            <SearchBox />
+            <Hits />
+          </InstantSearch>
 
           <Navbar.Toggle aria-controls='offcanvasNavbar' />
           <Navbar.Offcanvas
@@ -65,7 +75,7 @@ export default function NavMenu() {
                 }
               </Nav>
 
-              <Form className="d-flex">
+              {/* <Form className="d-flex">
                 <FormControl
                   type="search"
                   placeholder="Search"
@@ -73,7 +83,11 @@ export default function NavMenu() {
                   aria-label="Search"
                 />
                 <Button variant="outline-success">Search</Button>
-              </Form>
+              </Form> */}
+              {/* <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
+                <SearchBox />
+                <Hits />
+              </InstantSearch> */}
 
               {/* <Nav className='me-auto'>
                 <NavItem className='tab1'>
