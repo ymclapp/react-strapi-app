@@ -3,7 +3,7 @@ import './CartItem.css';
 
 import CartContext from '../../context/cart/CartContext';
 //import formatCurrency from 'format-currency';
-//import CurrencyFormat from 'react-currency-format';
+import CurrencyFormat from 'react-currency-format';
 
 const CartItem = ({ item }) => {
     const { removeItem } = useContext(CartContext);
@@ -11,15 +11,18 @@ const CartItem = ({ item }) => {
     //let opts = { prefix: '$', };
 
     return (
+        <>
         <li className='CartItem__item'>
-            <img src={item.image} alt='' />
+            {/* <img src={item.image} alt='' /> */}
             <div>
-                {item.name} ${`${item.price}`}
+                {item.attributes.title} {item.id} <br />
+                <CurrencyFormat value={`${item.attributes.revenue}`}thousandSeparator={true} prefix={'$'} />
             </div>
-            <button className='CartItem__button' onClick={() => removeItem(item._id)}>
+            <button className='CartItem__button' onClick={() => removeItem(item.id)}>
                 Remove
             </button>
         </li>
+        </>
     );
 };
 

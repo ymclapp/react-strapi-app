@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import './ProductCard.css';
-import { Badge } from 'react-bootstrap';
+//import { Badge } from 'react-bootstrap';
 //import formatCurrency from 'format-currency';
-//import CurrencyFormat from 'react-currency-format';
+import CurrencyFormat from 'react-currency-format';
 
 
 import CartContext from '../../context/cart/CartContext';
@@ -18,11 +18,12 @@ const ProductCard = ({ product }) => {
   return (
     <>
     <div className='productCard__wrapper'>
-      <div key={product._id}>
-        <img className='productCard__img' src={product.image} alt='' />
-        <h4>{product.name}</h4>
+      <div key={product.id}>
+        {/* <img className='productCard__img' src={film.attributes.image} alt='' /> */}
+        <h4>{product.attributes.title}</h4>
+        <h5>{product.id}</h5>
         <div className='ProductCard__price'>
-          <h5>${`${product.price}`}</h5>
+          <CurrencyFormat className = 'text-center' value={`${product.attributes.budget}`} thousandSeparator={true} prefix={'$'} />
         </div>
         <button
           className='ProductCard__button'
@@ -30,9 +31,9 @@ const ProductCard = ({ product }) => {
         >
           Add to Cart
         </button>
-        <div className='ProductCard__tags'>
+        {/* <div className='ProductCard__tags'>
           <Badge pill text='dark' bg='secondary '>{product.tags}</Badge>
-          </div>
+          </div> */}
       </div>
     </div>
     </>

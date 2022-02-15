@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import CurrencyFormat from 'react-currency-format';
 
-const dbAPI = 'http://localhost:1337/api/films';//need to figure out error on getting all
+const dbAPI = 'http://localhost:1337/api/films';
 
 
 export default function Products() {
