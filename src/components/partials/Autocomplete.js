@@ -6,6 +6,7 @@ import { autocomplete } from "@algolia/autocomplete-js";
 // https://www.algolia.com/doc/ui-libraries/autocomplete/guides/using-react/
 export function Autocomplete(props) {
   const containerRef = useRef(null);
+  
   useEffect(() => {
     if (!containerRef.current) {
       return undefined;

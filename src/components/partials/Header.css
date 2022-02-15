@@ -3,10 +3,55 @@
     src: url('/src/Components/Home/css/Roklien.ttf');
   } */
   
-  h1{
+  /* h1{
     background-color: #0794d1f5;
     padding-top: 18px;
     padding-bottom: 10px;
     margin-bottom: 0;
-  }
+  } */
+
+  html {
+  font-family: sans-serif;
+  font-size: 100%;
+}
+body.dark {
+  background-color: #333;
+  color: #fff;
+  transform: invert(1);
+}
+
+.aa-ItemLink {
+  padding: 1em;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+}
+/* .SearchHeader {
+  color: #444;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.5em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: bold;
+  max-width: 82ch;
+  width: 95vw;
+  margin: auto;
+} */
+
+.search-header {
+  color: #444;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.5em;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: 800;
+}
+.dark .search-header {
+  color: #f9f9f9;
+}
 
