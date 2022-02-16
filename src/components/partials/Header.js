@@ -11,8 +11,8 @@ import { getAlgoliaResults } from "@algolia/autocomplete-js";
 
 
 const searchClient = algoliasearch(
-  "DM3RZH4ZSK",
-  "36fc36bcb1cc6c88b3c5c1689ec57250"
+  "74W68YLA0N",
+  "6849b26b52cd542e3f4e44e985634e9f"
 );
 
 const actions = {
@@ -86,7 +86,7 @@ export default function Header() {
       <li className=''>
         <div className='aa-ItemTitle'>
           <h3>
-            <components.Highlight attribute='actionDisplay' hit={hit} />
+            <components.Highlight attribute='attributes.title' hit={hit} />
           </h3>
         </div>
       </li>
@@ -98,7 +98,7 @@ function ProductItem({ hit, components }) {
     <div className='aa-ItemTitle'>
       {hit.image ? <img src={hit.image} width={300}/> : ''}
       <h3>
-        <components.Highlight hit={hit} attribute='title' />
+        <components.Highlight hit={hit} attribute='attributes.image' />
       </h3>
     </div>
   );
@@ -121,7 +121,7 @@ function ProductItem({ hit, components }) {
                 searchClient,
                 queries: [
                   {
-                    indexName: "actions",
+                    indexName: "dev_ATSStore",
                     query
                   }
                 ]
@@ -140,6 +140,8 @@ function ProductItem({ hit, components }) {
               }
             }
           },
+
+          //our products
           {
             sourceId: "articles",
             getItemUrl({ item }) {
@@ -150,7 +152,7 @@ function ProductItem({ hit, components }) {
                 searchClient,
                 queries: [
                   {
-                    indexName: "blog_search",
+                    indexName: "dev_ATSStore",
                     query
                   }
                 ]
@@ -158,7 +160,7 @@ function ProductItem({ hit, components }) {
             },
             templates: {
               header() {
-                return <SearchHeader text="Blog Posts" />;
+                return <SearchHeader text="ATS Store" />;
               },
               item({ item, components }) {
                 return <ProductItem hit={item} components={components} />;
