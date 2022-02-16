@@ -5,31 +5,31 @@ import './Products.css';
 //import products from '../../data';
 import ProductCard from '../store/ProductCard';
 
-import CurrencyFormat from 'react-currency-format';
-import { Card } from 'react-bootstrap';
+// import CurrencyFormat from 'react-currency-format';
+// import { Card } from 'react-bootstrap';
 
-const dbAPI = 'http://localhost:1337/api/films';
+const dbAPI = 'http://localhost:1337/api/movies';
 
 export default function Products() {
 
-    const [films, setFilms] = useState({data: []});
+    const [movies, setMovies] = useState({data: []});
 
     useEffect(() => {
-        getFilmsWithFetch();
+        getMoviesWithFetch();
     }, []);
 
-const getFilmsWithFetch = async () => {
+const getMoviesWithFetch = async () => {
         const response = await fetch(dbAPI);
         const jsonData = await response.json({});
-        setFilms(jsonData);
+        setMovies(jsonData);
         console.log(jsonData);
     };
 
     return (
         <>
             <div className='products__wrapper'>
-                {films.data.map((film) => (
-                    <ProductCard key={film.id} product={film} />
+                {movies.data.map((movie) => (
+                    <ProductCard key={movie.id} product={movie} />
                     // <Card.Text>
                     // <CurrencyFormat className='text-center' value={film.attributes.budget} thousandSeparator={true} prefix={'$'} /> 
                     // </Card.Text>

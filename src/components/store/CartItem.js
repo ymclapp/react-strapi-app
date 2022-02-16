@@ -16,7 +16,7 @@ const CartItem = ({ item }) => {
             {/* <img src={item.image} alt='' /> */}
             <div>
                 {item.attributes.title} {item.id} <br />
-                <CurrencyFormat value={`${item.attributes.revenue}`}thousandSeparator={true} prefix={'$'} />
+                <CurrencyFormat value={`${item.attributes.price}`}thousandSeparator={true} prefix={'$'} />
             </div>
             <button className='CartItem__button' onClick={() => removeItem(item.id)}>
                 Remove
