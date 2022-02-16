@@ -19,11 +19,13 @@ const ProductCard = ({ product }) => {
     <>
     <div className='productCard__wrapper'>
       <div key={product.id}>
-        {/* <img className='productCard__img' src={film.attributes.image} alt='' /> */}
+        <img className='productCard__img' src={product.attributes.image} alt='' />
         <h4>{product.attributes.title}</h4>
-        <h5>{product.id}</h5>
+        <p>{product.attributes.summary}</p>
         <div className='ProductCard__price'>
-          <CurrencyFormat className = 'text-center' value={`${product.attributes.budget}`} thousandSeparator={true} prefix={'$'} />
+          <span>Price:  <CurrencyFormat className = 'text-center' value={`${product.attributes.price}`} thousandSeparator={true} prefix={'$'} /></span>
+          <br />
+          <span>Score:  {product.attributes.vote_average}</span>
         </div>
         <button
           className='ProductCard__button'
