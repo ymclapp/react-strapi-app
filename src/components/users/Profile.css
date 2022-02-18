@@ -50,3 +50,43 @@
     background-color: #E7F0FE;
     border: 1px solid #ccdcf5 !important;
 }
+
+
+.user-welcome {
+    /* margin: 0; */
+    font-style: italic;
+    font-size: 5em;
+    color: lightgray;
+    text-decoration: solid;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+    /* flex-grow: 1; */
+    padding: 0;
+    margin: 0;
+}
+
+.user-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* grid-gap: 20px; */
+    height: auto;
+    
+    }
+
+.user-name {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+    font-size: 3em;
+    /* flex-grow: 2; */
+}
+
+/* .userImage {
+    flex-grow: 1;
+} */
+.user-image {
+    border-top-left-radius: 100px;
+    /* flex-grow: 1; */
+    object-fit: cover;
+    padding-top: 20px;
+    height: 25vw;
+    width: 100%;
+    padding-bottom: 20px;
+}
