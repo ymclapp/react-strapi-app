@@ -29,11 +29,11 @@ export default function Profile() {
 
         try {
             await localStorage.setItem('demographic', JSON.stringify({
-                    address,
-                    city,
-                    state,
-                    zip,
-                    phone,
+                address,
+                city,
+                state,
+                zip,
+                phone,
             }));
 
             const response = await axios.post('http://localhost:1337/api/profiles',
@@ -47,7 +47,8 @@ export default function Profile() {
                         state,
                         zip,
                         phone,
-                    }}),
+                    }
+                }),
                 {
                     headers: { 'Content-Type': 'application/json' },
 
@@ -124,15 +125,26 @@ export default function Profile() {
                             />
 
                             <Button type='submit' className='demo-button'>Update Profile</Button>
-                          </Form>
+                        </Form>
                     </div>
 
                 ) : (
 
-
                     <Container as='div' className='showUsers mt-4'>
-                        <h2 className='text-center'><strong>{user.firstName} {user.lastName}'s Profile</strong></h2>
-                        <h6 className='text-center'> info is showing from localStorage</h6>
+
+                            {/* <h2 className='welcome text-start' style={{flex-grow: 1}}>Welcome,</h2> */}
+                            <div className='user-welcome text-start'>Welcome,</div>
+                            <div className='user-info'>
+                            <div className='user-name'>[prefix]{user.firstName} {user.lastName}, [suffix]</div>
+                            {/* <h6 className='text-center'> info is showing from localStorage</h6> */}
+                                <div className='userImage text-end'>
+                                    <img 
+                                    className='user-image' 
+                                    alt='[prefix]{user.firstName} {user.lastName}, [suffix]' 
+                                    src='https://nyulangone.org/images/doctors/w/wu/1255658662/benjamin-g-wu-square.jpg' />
+                                    </div>
+                        </div>
+
                         <CardGroup>
                             <Card className='profile-card'>
                                 <Card.Header className='user-header text-center'>
@@ -195,6 +207,7 @@ export default function Profile() {
                                 </Card>
 
                             )}
+
                         </CardGroup>
                     </Container>
 
