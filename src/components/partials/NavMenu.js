@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Nav, Navbar, Container, Offcanvas, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar, Container, Offcanvas, NavDropdown, Breadcrumb } from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 import '../partials/NavMenu.css';
 
@@ -30,6 +30,13 @@ export default function NavMenu() {
               height='80'
             />
             {' '}
+            <Breadcrumb>
+              <Breadcrumb.Item href="/home">Home</Breadcrumb.Item>
+              <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
+                Library
+              </Breadcrumb.Item>
+              <Breadcrumb.Item active>Data</Breadcrumb.Item>
+            </Breadcrumb>
           </Navbar.Brand>
           <div className='nav__right'>
             <div className='cart__icon'>
