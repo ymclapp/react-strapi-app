@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import './Cart.css';
 //import formatCurrency from 'format-currency';
-//import CurrencyFormat from 'react-currency-format';
+import CurrencyFormat from 'react-currency-format';
 
 import CartContext from '../../context/cart/CartContext';
 import CartItem from './CartItem';
@@ -41,7 +41,7 @@ const Cart = () => {
                         </div>
                         <div></div>
                         <div style={{ marginLeft: 5 }}>
-                            ${cartItems.reduce((amount, item) => item.attributes.price + amount, 0)}
+                            <CurrencyFormat  className='cart-total text-center' value={`${cartItems.reduce((amount, item) => item.attributes.price + amount, 0)}`}thousandSeparator={true} prefix={'$'} />
                         </div>
                     </div>
                 </div>

@@ -22,6 +22,10 @@
     font-weight: 600;
     font-size: larger;
   }
+
+  .cart-total {
+    font-weight: 600;
+  }
   
   .fa-times-circle {
     color: gray;

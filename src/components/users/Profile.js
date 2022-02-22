@@ -135,7 +135,7 @@ export default function Profile() {
                             {/* <h2 className='welcome text-start' style={{flex-grow: 1}}>Welcome,</h2> */}
                             <div className='user-welcome text-start'>Welcome,</div>
                             <div className='user-info'>
-                            <div className='user-name'>[prefix]{user.firstName} {user.lastName}, [suffix]</div>
+                            <div className='user-name'>{user.prefix} {user.firstName} {user.lastName}, {user.suffix}</div>
                             {/* <h6 className='text-center'> info is showing from localStorage</h6> */}
                                 <div className='userImage text-end'>
                                     <img 

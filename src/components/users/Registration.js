@@ -24,8 +24,10 @@ const Registration = () => {
     const [usernameFocus, setUsernameFocus] = useState(false);
 
     const [email, setEmail] = useState('');
+    const [prefix, setPrefix] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [suffix, setSuffix] = useState('');
     const [roles, setRoles] = useState('User');
 
     const [password, setPassword] = useState('');
@@ -61,7 +63,7 @@ const Registration = () => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [username, email, firstName, lastName, roles, password, matchPassword])
+    }, [username, email, prefix, firstName, lastName, suffix, roles, password, matchPassword])
 
     const handleRegistrationSubmit = async (e) => {
         e.preventDefault();
@@ -79,7 +81,7 @@ const Registration = () => {
 
         try {
             const response = await axios.post(REGISTRATION_URL,
-                JSON.stringify({ username, email, firstName, roles, lastName, password }),
+                JSON.stringify({ username, email, prefix, firstName, lastName, suffix, roles, password }),
                 {
                     headers: { 'Content-Type': 'application/json' },
                     // withCredentials:  true
@@ -209,19 +211,31 @@ const Registration = () => {
 
                         <br />
 
-                        <FloatingLabel className='reg-label' controlId='floatingInput3' label='First Name:  ' >
+                        <FloatingLabel className='reg-label' controlId='floatingInput3' label='Prefix:  ' >
+                            <Form.Control className='reg-input' type='text' name='prefix' value={prefix} onChange={(e) => setPrefix(e.target.value)} />
+                        </FloatingLabel>
+
+                        <br />
+
+                        <FloatingLabel className='reg-label' controlId='floatingInput4' label='First Name:  ' >
                             <Form.Control className='reg-input' type='text' name='firstName' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                         </FloatingLabel>
 
                         <br />
 
-                        <FloatingLabel className='reg-label' controlId='floatingInput4' label='Last Name:  ' >
+                        <FloatingLabel className='reg-label' controlId='floatingInput5' label='Last Name:  ' >
                             <Form.Control className='reg-input' type='text' name='lastName' value={lastName} onChange={(e) => setLastName(e.target.value)} />
                         </FloatingLabel>
 
                         <br />
 
-                        <FloatingLabel className='reg-label' controlId='floatingInput5' label='Role:  ' >
+                        <FloatingLabel className='reg-label' controlId='floatingInput6' label='Suffix:  ' >
+                            <Form.Control className='reg-input' type='text' name='suffix' value={suffix} onChange={(e) => setSuffix(e.target.value)} />
+                        </FloatingLabel>
+
+                        <br />
+
+                        <FloatingLabel className='reg-label' controlId='floatingInput7' label='Role:  ' >
                             <Form.Control className='reg-input' type='text' name='Role' value={roles} onClick={(e) => setRoles(e.target.value)} />
                         </FloatingLabel>
 

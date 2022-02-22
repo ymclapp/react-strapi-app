@@ -13,10 +13,10 @@ const CartItem = ({ item }) => {
     return (
         <>
         <li className='CartItem__item'>
-            {/* <img src={item.image} alt='' /> */}
-            <div>
+            <img src={item.attributes.image} alt='' />
+            <div className='text-center'>
                 {item.attributes.title} {item.id} <br />
-                <CurrencyFormat value={`${item.attributes.price}`}thousandSeparator={true} prefix={'$'} />
+                <CurrencyFormat  className='text-center' value={`${item.attributes.price}`}thousandSeparator={true} prefix={'$'} />
             </div>
             <button className='CartItem__button' onClick={() => removeItem(item.id)}>
                 Remove
