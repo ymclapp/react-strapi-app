@@ -29,7 +29,7 @@ h3,
 h4 {
   font-weight: normal;
 }
-/* .SearchHeader {
+.SearchHeader {
   color: #444;
   border-bottom: 2px solid currentColor;
   padding-bottom: 0.5em;
@@ -40,9 +40,9 @@ h4 {
   max-width: 82ch;
   width: 95vw;
   margin: auto;
-} */
+} 
 
-.search-header {
+/* .search-header {
   color: #444;
   border-bottom: 2px solid currentColor;
   padding-bottom: 0.5em;
@@ -53,5 +53,14 @@ h4 {
 }
 .dark .search-header {
   color: #f9f9f9;
+}  */
+
+body { 
+  font-family: sans-serif; 
+  padding: 5em; 
+
 }
 
+.ais-InstantSearch { 
+  margin: 5em;
+}
