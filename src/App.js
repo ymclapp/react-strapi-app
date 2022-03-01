@@ -208,7 +208,7 @@ function App() {
       <Router>
         <NavMenu />
         <Cart />
-        {/* <Header /> */}
+        <Header />
 
         <div className='main-content'>
 

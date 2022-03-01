@@ -1,42 +1,39 @@
-// import SearchHeader from './SearchHeader';
-// import './Header.css';
+import React from 'react';
+// import {
+//   MDBNavbar,
+//   MDBNavbarNav,
+//   MDBNavbarItem,
+//   MDBNavbarLink,
+//   MDBNavbarToggler,
+//   MDBContainer,
+//   MDBIcon
+// } from 'mdb-react-ui-kit';
 
-//import { toast } from 'react-toastify';
+import './Header.css';
 
-//Algolia Search
-import '@algolia/autocomplete-theme-classic';
-import algoliasearch from 'algoliasearch/lite';
-// import { Autocomplete } from './Autocomplete';
-// import { getAlgoliaResults } from "@algolia/autocomplete-js";
-import { InstantSearch, SearchBox, Hits, Index } from 'react-instantsearch-dom';
-
-
-const searchClient = algoliasearch(
-    "74W68YLA0N",
-    "6849b26b52cd542e3f4e44e985634e9f"
-);
-
+const user = JSON.parse(localStorage.getItem('user'));
 
 export default function Header() {
-
-    return (
-        <div className="ais-InstantSearch">
-            <InstantSearch
-                searchClient={searchClient}
-                indexName="dev_ATSStore"
-                >
-                <SearchBox />
-                <p></p>
-                <p><strong>dev_ATSStore Results</strong></p>
-                <Hits />
-                <p></p>
-                <Index indexName="dev_Manuals">
-                    <p><strong>dev_Manuals Results</strong></p>
-                    <Hits />
-                </Index>
-            </InstantSearch>
+  return (
+    <header>
+      <div
+        className='p-5 text-center bg-img'
+        style={{ backgroundImage: "url('https://2rdnmg1qbg403gumla1v9i2h-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/2015/05/cysticDiagnosis-1248216538-770x553-1-650x428.jpg')", height: 400 }}
+      >
+        <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
+          <div className='d-flex justify-content-center align-items-center h-100'>
+            <div className='text-white'>
+              {/* <h1 className='mb-3'>American Thoracic Society</h1> */}
+              {user && <h1 className='mb-3'>Welcome to the Home page, {user.firstName}!</h1>}
+                    {!user && <h1 className='mb-3'>Welcome!</h1>}
+              <h4 className='mb-3'>Subheading</h4>
+              <a className='btn btn-outline-light btn-lg' href='#!' role='button'>
+                Call to action
+              </a>
+            </div>
+          </div>
         </div>
-
-    )
+      </div>
+    </header>
+  );
 }
-
