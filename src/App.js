@@ -19,6 +19,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavMenu from './components/partials/NavMenu';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
+import Search from './components/pages/Search';
 
 //public routes
 import Home from './components/pages/Home';
@@ -38,6 +39,7 @@ import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
 import ProductMaint from './components/dashboard/ProductMaint';
+
 
 //const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
 const user = JSON.parse(localStorage.getItem('user'));
@@ -206,7 +208,7 @@ function App() {
       <Router>
         <NavMenu />
         <Cart />
-        <Header />
+        {/* <Header /> */}
 
         <div className='main-content'>
 
@@ -230,6 +232,10 @@ function App() {
 
             <Route path='/store'>
               <Products />
+            </Route>
+
+            <Route path='/search'>
+              <Search />
             </Route>
 
             <Route path='/login'>

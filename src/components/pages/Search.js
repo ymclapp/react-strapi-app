@@ -1,13 +1,7 @@
-// import SearchHeader from './SearchHeader';
-// import './Header.css';
-
-//import { toast } from 'react-toastify';
-
 //Algolia Search
 import '@algolia/autocomplete-theme-classic';
 import algoliasearch from 'algoliasearch/lite';
-// import { Autocomplete } from './Autocomplete';
-// import { getAlgoliaResults } from "@algolia/autocomplete-js";
+
 import { InstantSearch, SearchBox, Hits, Index } from 'react-instantsearch-dom';
 
 
@@ -17,7 +11,7 @@ const searchClient = algoliasearch(
 );
 
 
-export default function Header() {
+export default function Search() {
 
     return (
         <div className="ais-InstantSearch">
@@ -39,4 +33,3 @@ export default function Header() {
 
     )
 }
-
