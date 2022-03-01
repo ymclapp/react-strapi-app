@@ -32,6 +32,7 @@ export default function NavMenu() {
             />
             {' '}
           </Navbar.Brand>
+          
           <div className='nav__right'>
             <div className='cart__icon'>
               <i
