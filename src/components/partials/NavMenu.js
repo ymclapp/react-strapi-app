@@ -11,6 +11,7 @@ import CartContext from '../../context/cart/CartContext';
 // import algoliasearch from 'algoliasearch/lite';
 // import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 
+
 export default function NavMenu() {
   const { cartItems, showHideCart } = useContext(CartContext);
 
@@ -67,6 +68,7 @@ export default function NavMenu() {
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href='/home' className='navbar-link'>Home</Nav.Link>
                 <Nav.Link href='/store' className='navbar-link'>Store</Nav.Link>
+                <Nav.Link href='/search' className='navbar-link'>Search</Nav.Link>
                 {!user && <Nav.Link href='/login' className='navbar-link'>Login</Nav.Link>}
                 {user && <Nav.Link href='/profile' className='navbar-link'>Profile</Nav.Link>}
                 {user && <Nav.Link href='/login' className='navbar-link'>Logout</Nav.Link>}

@@ -8,17 +8,17 @@ import pic3 from '../stockPhotos/working.jpg';
 
 export default function Home() {
 
-    const user = JSON.parse(localStorage.getItem('user'));
+    // const user = JSON.parse(localStorage.getItem('user'));
 
 
     return (
         <>
-            <div className='container text-center'>
+            {/* <div className='container text-center'>
                 <header className='jumbotron'>
                     {user && <h3>Welcome to the Home page, {user.firstName}!</h3>}
                     {!user && <h3>Welcome!</h3>}
                 </header>
-            </div>
+            </div> */}
 
             <Container as='div' className='home text-center'>
                 <CardGroup>
