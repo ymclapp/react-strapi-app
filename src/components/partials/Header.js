@@ -24,7 +24,7 @@ export default function Header() {
           <div className='d-flex justify-content-center align-items-center h-100'>
             <div className='text-white'>
               {/* <h1 className='mb-3'>American Thoracic Society</h1> */}
-              {user && <h1 className='mb-3'>Welcome to the Home page, {user.firstName}!</h1>}
+              {user && <h1 className='mb-3'>Welcome {user.prefix} {user.lastName}!</h1>}
                     {!user && <h1 className='mb-3'>Welcome!</h1>}
               <h4 className='mb-3'>Subheading</h4>
               <a className='btn btn-outline-light btn-lg' href='#!' role='button'>
