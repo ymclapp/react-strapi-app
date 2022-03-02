@@ -14,6 +14,8 @@
 11.  For cart icon and items 'circles' paste into index.html in the public folder - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 12.  React-instantsearch-dom
 13.  React-instantsearch
+14.  React-avatar
+15.  Mdb-react-ui-kit - this was used for the header image, etc.
 
 
 
@@ -22,6 +24,7 @@
 2.  https://www.youtube.com/watch?v=oUZjO00NkhY
 3.  https://codesandbox.io/s/ygtux
 4.  https://www.youtube.com/watch?v=3bOUzjik8OY
+5.  https://github.com/ambassify/react-avatar/blob/master/demo/index.js
 
 ###  1)  index.js:
 1. import { BrowserRouter  } from 'react-router-dom';

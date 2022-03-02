@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Card, Container, CardGroup, FloatingLabel, Button, Form } from 'react-bootstrap';
+import { Card, Container, CardGroup, FloatingLabel, Button, Form, Toast } from 'react-bootstrap';
 
 
 import './Profile.css';
@@ -10,6 +10,7 @@ import axios from 'axios';
 //const profileDemoAPI = '/profiles';  //had to hard code to get it to work.  Not sure if it it wasn't picking up the axios baseUrl or what
 
 export default function Profile() {
+    const [show, toggleShow] = useState(true);
 
     const history = useHistory();
 
@@ -71,7 +72,7 @@ export default function Profile() {
             <div>
                 {!demographic ? (
                     <div>
-                        <h3 className='text-center'>{user.firstName}, please provide your mailing address</h3>
+                        <h3 className='text-center'>{user.prefix} {user.lastName}, please provide your mailing address</h3>
                         <Form className='demo-form' onSubmit={handleDemoAdd}>
 
                             <FloatingLabel className='demo-label' htmlFor='address'>Address:  </FloatingLabel>
@@ -131,18 +132,31 @@ export default function Profile() {
                 ) : (
 
                     <Container as='div' className='showUsers mt-4'>
+                        {user && !show &&
+                            <Button onClick={() => toggleShow(true)}>More Information</Button>}
+                        <Toast show={show} onClose={() => toggleShow(false)}>
+                            <Toast.Header>
+                                <strong className="mr-auto">{user.prefix} {user.lastName} currated offerings</strong>
+                            </Toast.Header>
+                            <Toast.Body>
+                                Profile information<br />
+                                Assemblies<br />
+                                Something More<br />
+                                What else?<br />
+                            </Toast.Body>
+                        </Toast>
 
-                            {/* <h2 className='welcome text-start' style={{flex-grow: 1}}>Welcome,</h2> */}
-                            <div className='user-welcome text-start'>Welcome,</div>
-                            <div className='user-info'>
+                        {/* <h2 className='welcome text-start' style={{flex-grow: 1}}>Welcome,</h2> */}
+                        <div className='user-welcome text-start'>Welcome,</div>
+                        <div className='user-info'>
                             <div className='user-name'>{user.prefix} {user.firstName} {user.lastName}, {user.suffix}</div>
                             {/* <h6 className='text-center'> info is showing from localStorage</h6> */}
-                                <div className='userImage text-end'>
-                                    <img 
-                                    className='user-image' 
-                                    alt='[prefix]{user.firstName} {user.lastName}, [suffix]' 
+                            <div className='userImage text-end'>
+                                <img
+                                    className='user-image'
+                                    alt='[prefix]{user.firstName} {user.lastName}, [suffix]'
                                     src='https://nyulangone.org/images/doctors/w/wu/1255658662/benjamin-g-wu-square.jpg' />
-                                    </div>
+                            </div>
                         </div>
 
                         <CardGroup>
