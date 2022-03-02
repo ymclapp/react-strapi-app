@@ -13,11 +13,11 @@ import CartState from '../src/context/cart/CartState';
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <CartState>  
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-    </CartState>
+      <CartState>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CartState>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')

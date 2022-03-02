@@ -44,7 +44,7 @@
   
     flex: 1;
   }
-  
+/*   
   .input__wrapper {
     display: flex;
     align-items: center;
@@ -65,7 +65,7 @@
   input:active {
     outline: none;
   }
-  
+   */
   .nav__right {
     flex: 1;
   }
