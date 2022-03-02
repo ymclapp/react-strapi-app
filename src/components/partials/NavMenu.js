@@ -19,8 +19,18 @@ export default function NavMenu() {
   // const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
   const user = JSON.parse(localStorage.getItem('user'));
   const registration = JSON.parse(localStorage.getItem('registration'));
-  const name = (`${user.firstName} ${user.lastName}`);
+  // const name = (`${user.firstName} ${user.lastName}`);
 
+
+  // if(user) {
+  //   return (
+  //     <div className='avatar'>
+  //     <Nav.Link href='/profile'>
+  //       <Avatar name={`${user.firstName} ${user.lastName}`} color={Avatar.getRandomColor('sitebase', ['red', 'green', 'blue'])} />
+  //     </Nav.Link>
+  //     </div>
+  //   );
+  // }
   return (
     <>
       <Navbar className='navbar' sticky='top' expand={false}>
@@ -50,11 +60,18 @@ export default function NavMenu() {
             </div>
           </div>
 
-          <div className='avatar'>
-          <Nav.Link href='/profile'>
-            <Avatar name={name} color={Avatar.getRandomColor('sitebase', ['red', 'green', 'blue'])} />
-          </Nav.Link>
-          </div>
+          {user &&
+            <div className='avatar'>
+              <Nav.Link href='/profile'>
+                <Avatar 
+                name={`${user.firstName} ${user.lastName}`} 
+                color='dodgerblue' 
+                round={true} 
+                size={40}
+                />
+              </Nav.Link>
+            </div>
+          }
 
           {/* <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
             <SearchBox />
