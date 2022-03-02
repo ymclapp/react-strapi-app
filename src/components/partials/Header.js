@@ -1,28 +1,13 @@
-import React, { useState } from 'react';
-// import {
-//   MDBNavbar,
-//   MDBNavbarNav,
-//   MDBNavbarItem,
-//   MDBNavbarLink,
-//   MDBNavbarToggler,
-//   MDBContainer,
-//   MDBIcon
-// } from 'mdb-react-ui-kit';
-import { Toast, Button } from 'react-bootstrap';
+import React from 'react';
 
 import './Header.css';
 
 const user = JSON.parse(localStorage.getItem('user'));
 
 export default function Header() {
-
-
   return (
     <>
-
-
       <header>
-
         <div
           className='p-5 text-center bg-img'
           style={{ backgroundImage: "url('https://2rdnmg1qbg403gumla1v9i2h-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/2015/05/cysticDiagnosis-1248216538-770x553-1-650x428.jpg')", height: 300 }}
@@ -42,8 +27,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-
-
     </>
   );
 }

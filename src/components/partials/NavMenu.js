@@ -8,29 +8,13 @@ import Logo from './img/logo.png';
 
 import CartContext from '../../context/cart/CartContext';
 
-//Algolia Search
-// import algoliasearch from 'algoliasearch/lite';
-// import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
-
 
 export default function NavMenu() {
   const { cartItems, showHideCart } = useContext(CartContext);
 
-  // const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
   const user = JSON.parse(localStorage.getItem('user'));
   const registration = JSON.parse(localStorage.getItem('registration'));
-  // const name = (`${user.firstName} ${user.lastName}`);
 
-
-  // if(user) {
-  //   return (
-  //     <div className='avatar'>
-  //     <Nav.Link href='/profile'>
-  //       <Avatar name={`${user.firstName} ${user.lastName}`} color={Avatar.getRandomColor('sitebase', ['red', 'green', 'blue'])} />
-  //     </Nav.Link>
-  //     </div>
-  //   );
-  // }
   return (
     <>
       <Navbar className='navbar' sticky='top' expand={false}>
@@ -72,11 +56,6 @@ export default function NavMenu() {
               </Nav.Link>
             </div>
           }
-
-          {/* <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
-            <SearchBox />
-            <Hits />
-          </InstantSearch> */}
 
           <Navbar.Toggle aria-controls='offcanvasNavbar' />
           <Navbar.Offcanvas
@@ -120,20 +99,6 @@ export default function NavMenu() {
                   </NavDropdown>
                 }
               </Nav>
-
-              {/* <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form> */}
-              {/* <InstantSearch searchClient={searchClient} indexName="demo_ecommerce">
-                <SearchBox />
-                <Hits />
-              </InstantSearch> */}
 
               {/* <Nav className='me-auto'>
                 <NavItem className='tab1'>

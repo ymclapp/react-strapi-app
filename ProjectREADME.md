@@ -25,6 +25,7 @@
 3.  https://codesandbox.io/s/ygtux
 4.  https://www.youtube.com/watch?v=3bOUzjik8OY
 5.  https://github.com/ambassify/react-avatar/blob/master/demo/index.js
+6.  https://codesandbox.io/s/udtgo?file=/src/App.js:295-339
 
 ###  1)  index.js:
 1. import { BrowserRouter  } from 'react-router-dom';

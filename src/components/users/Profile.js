@@ -6,9 +6,6 @@ import { Card, Container, CardGroup, FloatingLabel, Button, Form, Toast } from '
 import './Profile.css';
 import axios from 'axios';
 
-
-//const profileDemoAPI = '/profiles';  //had to hard code to get it to work.  Not sure if it it wasn't picking up the axios baseUrl or what
-
 export default function Profile() {
     const [show, toggleShow] = useState(false);
 
@@ -41,8 +38,6 @@ export default function Profile() {
                 JSON.stringify({
                     data: {
                         username: user.username,
-                        // firstName: user.firstName,
-                        // lastName: user.lastName,
                         address,
                         city,
                         state,
@@ -224,8 +219,6 @@ export default function Profile() {
 
                         </CardGroup>
                     </Container>
-
-
                 )}
             </div>
         </>

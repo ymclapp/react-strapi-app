@@ -44,28 +44,7 @@
   
     flex: 1;
   }
-/*   
-  .input__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    border-radius: 25px;
-    background-color: white;
-  }
-  
-  .input__wrapper input {
-    width: 100%;
-    padding: 0 10px;
-    border: none;
-    display: block;
-  }
-  
-  .input__wrapper input:focus,
-  input:active {
-    outline: none;
-  }
-   */
+
   .nav__right {
     flex: 1;
   }

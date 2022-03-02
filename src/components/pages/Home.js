@@ -13,13 +13,6 @@ export default function Home() {
 
     return (
         <>
-            {/* <div className='container text-center'>
-                <header className='jumbotron'>
-                    {user && <h3>Welcome to the Home page, {user.firstName}!</h3>}
-                    {!user && <h3>Welcome!</h3>}
-                </header>
-            </div> */}
-
             <Container as='div' className='home text-center'>
                 <CardGroup>
                     <Card className="card">
