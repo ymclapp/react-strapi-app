@@ -29,7 +29,7 @@
   
   .fa-times-circle {
     color: gray;
-    transition: transform 0.2s linear;
+    transition: transform 0.2s linear; 
   }
   
   .fa-times-circle:hover {

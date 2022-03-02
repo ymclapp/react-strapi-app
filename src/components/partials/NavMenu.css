@@ -74,10 +74,12 @@
     position: relative;
     width: max-content;
     margin-left: auto;
+    padding-right: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* color: black; */
+    color: dodgerblue;
+
   }
   
   .cart__icon i {
@@ -94,7 +96,7 @@
     font-size: 10px;
     height: 14px;
     width: 14px;
-    top: -50%;
-    right: -50%;
+    top: -40%;
+    right: 1em;
   }
   

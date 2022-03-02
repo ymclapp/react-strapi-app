@@ -36,7 +36,7 @@ export default function NavMenu() {
           <div className='nav__right'>
             <div className='cart__icon'>
               <i
-                className='fa fa-shopping-cart'
+                className='fa fa-shopping-cart fa-2x'
                 aria-hidden='true'
                 onClick={showHideCart}
               />
