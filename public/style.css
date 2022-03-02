@@ -79,10 +79,10 @@ main {
 }
 
 /* HITS */
-.ais-Hits__root{
+/* .ais-Hits__root{
     border-top: 2px solid #eee;
     margin-top: 5px;
-}
+} */
 #hits {
     margin: 4px 0;
     padding: 10px 0;
