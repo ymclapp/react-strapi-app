@@ -3,7 +3,6 @@
 import algoliasearch from 'algoliasearch/lite';
 
 import { InstantSearch, SearchBox, Hits, Index, Highlight } from 'react-instantsearch-dom';
-import { Card } from 'react-bootstrap';
 
 import '../../style.css';  //you can CSS the results here
 
@@ -15,12 +14,14 @@ const searchClient = algoliasearch(
 const Hit = ({ hit }) => (
     <p>
         <Highlight attribute='attributes.title' hit={hit} tagName='mark' />
+
+
     </p>
 );
 
 const Hit2 = ({ hit }) => (
     <p>
-        <Highlight attribute = 'title' hit={hit} tagName='mark' />
+        <Highlight attribute={'title'} hit={hit} tagName='mark' />
     </p>
 );
 
@@ -32,6 +33,7 @@ export default function Search() {
             <InstantSearch
                 searchClient={searchClient}
                 indexName="dev_ATSStore"
+
                 >
                 <SearchBox />
                 <p></p>
@@ -40,7 +42,7 @@ export default function Search() {
                 <p></p>
                 <Index indexName="dev_Manuals">
                     <p className='results__location'>Algolia Index:  dev_Manuals Results</p>
-                    <Hits  hitComponent={Hit2} />
+                    <Hits hitComponent={Hit2} />
                 </Index>
             </InstantSearch>
         </div>

@@ -546,15 +546,18 @@ footer a:hover {
 
 .ais-Hits-item {
     color: black;
-    list-style: circle;
+    /* list-style: circle; */
     background-color: rgb(209, 209, 199);
+    width:calc(50%);
+    height: auto;
 }
 
 .ais-Hits-list {
-    list-style: circle;
-    font-style: italic;
+    /* font-weight: 600; */
+    text-align: center;
 }
 
 .ais-Hits {
     background-color: dodgerblue;
 }
+
