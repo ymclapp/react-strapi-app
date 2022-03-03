@@ -1,0 +1,8 @@
+{
+  "projectName": "react-strapi-app",
+  "meta": {
+    "type": "frontend"
+  },
+  "packageManager": "npm",
+  "hash": "f4d16108"
+}

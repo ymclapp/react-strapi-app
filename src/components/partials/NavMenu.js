@@ -73,6 +73,7 @@ export default function NavMenu() {
                 <Nav.Link href='/home' className='navbar-link'>Home</Nav.Link>
                 <Nav.Link href='/store' className='navbar-link'>Store</Nav.Link>
                 <Nav.Link href='/search' className='navbar-link'>Search</Nav.Link>
+                <Nav.Link href='/assemblies' className='navbar-link'>Assemblies</Nav.Link>
                 {!user && <Nav.Link href='/login' className='navbar-link'>Login</Nav.Link>}
                 {user && <Nav.Link href='/profile' className='navbar-link'>Profile</Nav.Link>}
                 {user && <Nav.Link href='/login' className='navbar-link'>Logout</Nav.Link>}

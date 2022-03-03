@@ -27,6 +27,7 @@ import Registration from './components/users/Registration';
 import Login from './components/users/Login';
 import Products from './components/store/Products';
 import Cart from './components/store/Cart';
+import Assemblies from './components/pages/Assemblies';
 
 //conference
 import Conference from './components/pages/Conference';
@@ -39,6 +40,7 @@ import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
 import ProductMaint from './components/dashboard/ProductMaint';
+
 
 
 //const searchClient = algoliasearch('74W68YLA0N', '6849b26b52cd542e3f4e44e985634e9f');
@@ -232,6 +234,10 @@ function App() {
 
             <Route path='/store'>
               <Products />
+            </Route>
+
+            <Route path='/assemblies'>
+              <Assemblies />
             </Route>
 
             <Route path='/search'>

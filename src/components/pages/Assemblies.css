@@ -1,0 +1,12 @@
+.assembly-definition {
+    margin: 2em;
+    border-radius: 1em;
+}
+
+.assemblies-header {
+    border-color: red;
+}
+
+.assembly-chair {
+    font-style: italic;
+}
