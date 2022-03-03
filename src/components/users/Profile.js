@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Card, Container, CardGroup, FloatingLabel, Button, Form, Toast } from 'react-bootstrap';
+import { Card, Container, CardGroup, FloatingLabel, Button, Form, Toast, Nav } from 'react-bootstrap';
 
 
 import './Profile.css';
@@ -137,10 +137,10 @@ export default function Profile() {
                                 <strong className="mr-auto">{user.prefix} {user.lastName} currated offerings</strong>
                             </Toast.Header>
                             <Toast.Body>
-                                Profile information<br />
+                                <a href='/store'>Profile information</a><br />
                                 Assemblies<br />
-                                Something More<br />
-                                What else?<br />
+                                My Certificates<br />
+                                Contact Information<br />
                             </Toast.Body>
                         </Toast>
 
