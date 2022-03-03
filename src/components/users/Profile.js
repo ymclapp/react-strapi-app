@@ -128,7 +128,10 @@ export default function Profile() {
 
                     <Container as='div' className='showUsers mt-4'>
                         {user && !show &&
-                            <Button onClick={() => toggleShow(true)}>More Information</Button>}
+                            <Button onClick={() => toggleShow(true)}>
+                                Manage Account
+                                <i className='edit__icon fa fa-pencil' aria-hidden='true'></i>
+                                </Button>}
                         <Toast show={show} onClose={() => toggleShow(false)}>
                             <Toast.Header>
                                 <strong className="mr-auto">{user.prefix} {user.lastName} currated offerings</strong>
