@@ -11,9 +11,10 @@ export default function Sessions() {
         <header className='jumbotron'>
           <h2>ATS 2022 Conference Sessions</h2>
           <img
+          className='conference-image'
             alt='ATS Conference Logo'
             src={Logo}
-            width='460'
+            width='1200'
             height='160'
           />
         </header>

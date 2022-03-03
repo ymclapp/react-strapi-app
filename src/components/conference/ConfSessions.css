@@ -19,3 +19,7 @@ thead{
     margin: 3%;
     margin-left: 9%;
 }
+.conference-image {
+    background: no-repeat center;
+    background-size: cover;
+}
