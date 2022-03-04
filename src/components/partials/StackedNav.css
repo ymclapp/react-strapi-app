@@ -47,7 +47,7 @@ font-family: 'Sansita Swashed', cursive; */
 
 }
 .logo {
-    padding-top: 2em;
+    padding-top: 0;
 }
 
 /* .wrapper .top_nav .left .logo p{
@@ -96,6 +96,7 @@ font-family: 'Sansita Swashed', cursive; */
     padding: 8px 10px;
     color: dodgerblue;
     text-decoration: none;
+
 }
 
 /* .wrapper .top_nav .right ul li:last-child a {
@@ -110,7 +111,11 @@ font-family: 'Sansita Swashed', cursive; */
     /* width: 100%; */
     background: dodgerblue;
     height: 47px;
-    padding: 0 30em;
+    /* padding: 0 30em; */
+    padding-right: 1em;
+    margin-left: 15em;
+    margin-bottom: 2em;
+    border-bottom-left-radius: 95px;
 }
 
 .wrapper .bottom_nav ul {
@@ -146,8 +151,8 @@ font-family: 'Sansita Swashed', cursive; */
   .cart__icon {
     position: relative;
     width: max-content;
-    margin-left: 20em;
-    padding-right: 1em;
+    /* margin-left: 20em; */
+    /* padding-right: 1em; */
     display: flex;
     align-items: center;
     justify-content: center;
