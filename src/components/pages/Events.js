@@ -2,6 +2,8 @@
 
 export default function Events() {
     return(
-        <div>This is the events page</div>
+        <div className='events-page text-center'>
+            <h1>This is the events page</h1>
+        </div>
     )
 }

@@ -40,6 +40,8 @@ export default function StackedNav() {
                     <ul>
                         <li><a href='/assemblies'>Assemblies</a></li>
                         <li>>></li>
+                        <li><a href='/articles'>Articles</a></li>
+                        <li>>></li>
                         <li><a href='/events'>Events</a></li>
                         <li>>></li>
                         {user && <li><a href='/dashboard'>Admin Dashboard</a></li>}
