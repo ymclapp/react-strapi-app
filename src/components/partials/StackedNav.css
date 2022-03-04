@@ -175,3 +175,7 @@ font-family: 'Sansita Swashed', cursive; */
 
   }
   
+  .mask {
+    height: 12em;
+    /* align-items: center; */
+  }
