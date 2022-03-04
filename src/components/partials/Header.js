@@ -11,15 +11,10 @@ export default function Header() {
     <>
       <Alert variant='primary' className='note'>
         <Alert.Heading><strong>Note:</strong></Alert.Heading>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum doloremque
-          officia laboriosam. Itaque ex obcaecati architecto! Qui necessitatibus delectus placeat illo rem id nisi
-          consequatur esse, sint perspiciatis soluta porro?
-        </p>
+        {/* <p></p> */}
         <hr />
         <p className='mb-0'>
-          Whenever you need to, be sure to use margin utilities to keep things nice
-          and tidy.
+          The conference pre-registration is open!
         </p>
       </Alert>
       <header>
