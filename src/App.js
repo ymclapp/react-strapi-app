@@ -52,7 +52,7 @@ const registration = JSON.parse(localStorage.getItem('registration'));
 
 //************Algolia Search************
 // function Action({ hit }) {
-  // Component to display the items
+// Component to display the items
 //   return (
 //     <div className="aa-ItemWrapper">
 //       <div className="aa-ItemContent">
@@ -110,8 +110,8 @@ const registration = JSON.parse(localStorage.getItem('registration'));
 function App() {
   return (
     <>
-    <div className="App">
-    {/* <Autocomplete
+      <div className="App">
+        {/* <Autocomplete
         placeholder="Try '/dark'"
         openOnFocus
         defaultActiveItemId={0}
@@ -207,11 +207,11 @@ function App() {
           }
         ]}
       /> */}
-    </div>
+      </div>
 
       <Router>
-        {/* <NavMenu /> */}
         <StackedNav />
+        {/* <NavMenu /> */}
         <Cart />
         <Header />
 
@@ -278,7 +278,7 @@ function App() {
         </div>
 
       </Router>
-      
+
     </>
   );
 }
