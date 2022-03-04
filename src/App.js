@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Navigation
 import NavMenu from './components/partials/NavMenu';
+import StackedNav from './components/partials/StackedNav';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
 import Search from './components/pages/Search';
@@ -40,6 +41,7 @@ import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
 import ProductMaint from './components/dashboard/ProductMaint';
+
 
 
 
@@ -208,7 +210,8 @@ function App() {
     </div>
 
       <Router>
-        <NavMenu />
+        {/* <NavMenu /> */}
+        <StackedNav />
         <Cart />
         <Header />
 
