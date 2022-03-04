@@ -2,12 +2,14 @@
   background: no-repeat center;
   background-size: cover;
   margin-bottom: 3em;
+  margin-top: 12em;
   /* max-width: 100%; */
   }
 
   .note {
     background-color: rgb(83, 136, 250);
     margin: 2em;
+    margin-top: 7em;
     border-left: blue;
     /* border-style: double; */
     /* border- */

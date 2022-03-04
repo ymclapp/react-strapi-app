@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider';
 import CartState from '../src/context/cart/CartState';
+// import 'mdbreact/dist/css/mdb.css';
 
 
 //Not sure if CartState goes after or before AuthProvider - putting it after to test out

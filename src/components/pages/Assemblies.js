@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardHeader, MDBCardFooter, MDBBtn } from 'mdb-react-ui-kit';
+// import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardHeader, MDBCardFooter, MDBBtn } from 'mdb-react-ui-kit';
+import { MDBCard, MDBCardBody, MDBCardText, MDBCardHeader, MDBCardFooter } from 'mdb-react-ui-kit';
+
+
 
 const assembAPI = 'http://localhost:1337/api/assemblies';
 
@@ -40,7 +43,7 @@ export default function Assemblies() {
                             target="_blank"
                             style={{textDecoration: 'none'}}
                             >
-                                <strong>{assembly.attributes.assemblyName}</strong>
+                                <h2>{assembly.attributes.assemblyName}</h2>
                                 </a>
 
                         </MDBCardHeader>
@@ -63,7 +66,7 @@ export default function Assemblies() {
 
                         <MDBCardFooter className='assembly-chair text-muted'>
                             Chair:  {assembly.attributes.assemblyChairName} {''}
-                            ({assembly.attributes.assemblyChairEmail})
+                            ({assembly.attributes.assemblyChairEmail})>
                         </MDBCardFooter>
 
                     </MDBCard>
