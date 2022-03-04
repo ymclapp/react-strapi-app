@@ -29,6 +29,7 @@ import Login from './components/users/Login';
 import Products from './components/store/Products';
 import Cart from './components/store/Cart';
 import Assemblies from './components/pages/Assemblies';
+import Events from './components/pages/Events';
 
 //conference
 import Conference from './components/pages/Conference';
@@ -41,6 +42,7 @@ import Demo from './components/dashboard/Demographics';
 import Sessions from './components/dashboard/Sessions';
 import Profile from './components/users/Profile';
 import ProductMaint from './components/dashboard/ProductMaint';
+
 
 
 
@@ -241,6 +243,10 @@ function App() {
 
             <Route path='/assemblies'>
               <Assemblies />
+            </Route>
+
+            <Route path='/events'>
+              <Events />
             </Route>
 
             <Route path='/search'>

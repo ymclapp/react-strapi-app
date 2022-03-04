@@ -30,9 +30,9 @@ export default function StackedNav() {
                     </div>
                     <div className='right'>
                         <ul>
-                            <li><a href='/home'>Home</a></li>
-                            <li><a href='/store'>Store</a></li>
                             <li><a href='/conference'>Conference</a></li>
+                            <li><a href='/store'>Store</a></li>
+                            <li><a href='/search'>Search</a></li>
                         </ul>
                     </div>
                 </div>
@@ -40,9 +40,9 @@ export default function StackedNav() {
                     <ul>
                         <li><a href='/assemblies'>Assemblies</a></li>
                         <li>>></li>
-                        <li><a href='/home'>Events</a></li>
+                        <li><a href='/events'>Events</a></li>
                         <li>>></li>
-                        <li><a href='/conference'>Conference</a></li>
+                        {user && <li><a href='/dashboard'>Admin Dashboard</a></li>}
                         {/* </ul> */}
                         <div className='nav__right'>
                             <div className='cart__icon'>

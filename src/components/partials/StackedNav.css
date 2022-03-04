@@ -101,10 +101,10 @@ font-family: 'Sansita Swashed', cursive; */
 
 /* .wrapper .top_nav .right ul li:last-child a {
     color: white;
-}
+} */
 
-.wrapper .top_nav .right ul li:hover:last-child {
-    background: mediumvioletred;
+/* .wrapper .top_nav .right ul li:hover {
+    background-color: grey;
 } */
 
 .wrapper .bottom_nav {
