@@ -7,6 +7,7 @@ const articleAPI = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api
 export default function Articles() {
 
     const [articles, setArticles] = useState({ results: [] });
+    // const [images, setImages] = useState({media: []})
 
     useEffect(() => {
         getArticlesWithFetch();
@@ -17,6 +18,7 @@ export default function Articles() {
         const jsonData = await response.json({});
         setArticles(jsonData);
         console.log(jsonData);
+        // setImages(jsonData.results.media)
     };
 
     return (
