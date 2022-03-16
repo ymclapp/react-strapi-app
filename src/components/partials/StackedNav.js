@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import '../partials/StackedNav.css';
 import Avatar from 'react-avatar';
 
-import Logo from './img/logo.png';
+// import Logo from './img/logo.png';
+import logoFake from '../stockPhotos/logoFake.jpg';
 import CartContext from '../../context/cart/CartContext';
 
 const user = JSON.parse(localStorage.getItem('user'));
@@ -18,8 +19,8 @@ export default function StackedNav() {
                     <div className='left'>
                         <div className='logo'>
                             <img
-                                alt='ATS Logo'
-                                src={Logo}
+                                alt='Logo'
+                                src={logoFake}
                                 width='250'
                                 height='90'
                             />
