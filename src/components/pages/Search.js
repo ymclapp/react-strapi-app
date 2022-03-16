@@ -37,7 +37,7 @@ export default function Search() {
                 >
                 <SearchBox />
                 <p></p>
-                <p className='results__location'>Algolia Index:  dev_ATSStore Results</p>
+                <p className='results__location'>Algolia Index:  dev_Store Results</p>
                 <Hits hitComponent={Hit} />
                 <p></p>
                 <Index indexName="dev_Manuals">

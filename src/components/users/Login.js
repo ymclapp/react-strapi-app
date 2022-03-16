@@ -127,7 +127,7 @@ if (user) {
                 
             ) : (
 
-                <section className='login-section ats-background-logo'>
+                <section className='login-section '>
                     <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errMsg}</p>
                     <h2 className='login-title text-center'>Sign In</h2>
 

@@ -17,24 +17,12 @@ export default function Home() {
             <div className='container text-center'>
                 <header className='jumbotron'>
                     <h3>Welcome to the Conference page, {user.prefix} {user.lastName}!</h3>
-                    <img
-                        alt='ATS Conference Logo'
-                        src={Logo}
-                        width='100%'
-                        height='180'
-                    />
+
                 </header>
             </div>
             <div className='conf-summary text-justify'>
                 <p>
-                    The ATS International Conference is the home of pulmonary, critical care, and sleep professionals, from those in the earliest stages of their careers to those whose research or strides in clinical care has gained them international recognition. Each year, nearly 14,000 of these professionals choose to attend, present, and learn about the latest advances, meet with colleagues from around the world, and strike new collaborations. It is truly where today’s science meets tomorrow’s care.
-                    <br /><br />
-                    The International Conference is also multidisciplinary. Clinicians and researchers in many other fields attend the conference, thereby enriching conversations that lead to insights that ultimately improve patient care.
-                    <br /><br />
-                    Equally important, the ATS International Conference gathers the entire health care team in one place to share ideas across these medical and scientific disciplines. It is the ideal place for registered nurses, advanced practice nurses, respiratory therapists, and hospitalists to discuss their experiences, challenges, and research so that all can learn about the latest advances in understanding pulmonary disease, critical illness, and sleep disorders.
-                    <br /><br />
-                    And of course, the International Conference is truly international:
-                    40 percent of attendees arrive from laboratories and patient care centers beyond the United States.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Sit amet cursus sit amet dictum sit amet justo donec.
                 </p>
                 <h3 className='conf-takeaway'>
                     Join your colleagues, and be the first to know.
@@ -51,11 +39,7 @@ export default function Home() {
                         <Card.Img className='featured' variant='top' src={pic1} />
                         <Card.Body>
                             <Card.Text>
-                                Your registration includes a networking reception and dinner with keynote address on Friday, May 13th as well as a full day of programming, continental breakfast, luncheon, plenty of networking time and a closing reception on Saturday, May 14th.
-                                <br /><br />
-                                Registration will open on Thursday, January 6, 2022 along with registration for the ATS 2022 International Conference. Attendance at the Respiratory Innovation Summit does not include OR require full registration for ATS 2022, but attendees are encouraged to be a part of our community.
-                                <br /><br />
-                                More information about ATS 2022 can be found here: https://conference.thoracic.org
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Sit amet cursus sit amet dictum sit amet justo donec.
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -67,13 +51,11 @@ export default function Home() {
                             Sessions
                         </Card.Header>
                         <div>
-                            <Card.Img className='featured' variant='top' src={pic2} />
+                            <Card.Img className='featured' variant='top' src={pic3} />
                         </div>
                         <Card.Body>
                             <Card.Text>
-                                Sessions will be held in the Moscone Center<br />747 Howard Street<br />San Francisco, CA 94103
-                                <br /><br />
-                                ATS 2022 San Francisco will offer the latest information on clinical, basic, and translational science in pulmonary, critical care, and sleep medicine.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Sit amet cursus sit amet dictum sit amet justo donec.
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -84,7 +66,7 @@ export default function Home() {
                         <Card.Header className='conf-header'>
                             Sponsors
                         </Card.Header>
-                        <Card.Img className='featured' variant='top' src={pic3} />
+                        <Card.Img className='featured' variant='top' src={pic1} />
                         <Card.Body>
                             <Card.Text>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
