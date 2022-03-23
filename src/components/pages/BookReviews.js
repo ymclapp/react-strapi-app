@@ -6,7 +6,7 @@ const bookAPI = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fi
 
 export default function Books() {
 
-    const [books, setBooks] = useState('');
+    const [books, setBooks] = useState({results:[]});
 
 
     useEffect(() => {
@@ -24,7 +24,7 @@ export default function Books() {
     return (
         <>
             <div>
-                <p>{JSON.stringify(books.results)}</p>   This works to bring back everything for
+                <p>{JSON.stringify(books.results.books)}</p>   This works to bring back everything for
                 {/* <Container fluid>
                 {articles.results.map((article) => (
                     <Card key={article.id}>
