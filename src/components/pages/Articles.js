@@ -18,7 +18,7 @@ export default function Articles() {
         const jsonData = await response.json({});
         setArticles(jsonData);
         console.log(jsonData);
-        // setImages(jsonData.results.media)
+        // console.log(jsonData.media);
     };
 
     return (
