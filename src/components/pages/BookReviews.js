@@ -24,7 +24,7 @@ export default function Books() {
     return (
         <>
             <div>
-                <p>{JSON.stringify(books.results.books)}</p>   This works to bring back everything for
+                {/* <p>{JSON.stringify(books.results.books[0].title)}</p>   This works to bring back everything for */}
                 {/* <Container fluid>
                 {articles.results.map((article) => (
                     <Card key={article.id}>
@@ -43,15 +43,15 @@ export default function Books() {
                     </Card>
                 ))}
             </Container> */}
-                {/* <Container fluid>
-                    {books.map((book, index) =>
+                <Container fluid>
+                    {books.results.books[0].title.map((book, index) =>
                         <Card key={book.index}>
                             <Card.Header
                                 className='article-header text-center'
                             >
-                                <h1>{book.list_name}</h1>
-                                <h5 className='text-muted'>{book.byline}</h5>
-                            </Card.Header> */}
+                                <h1>{book.title}</h1>
+                                {/* <h5 className='text-muted'>{book.byline}</h5> */}
+                            </Card.Header>
                             {/* <Card.Body className='article-abstract'>
                                 <h5>{book.abstract}</h5>
                             </Card.Body> */}
@@ -60,9 +60,9 @@ export default function Books() {
                                 {book.source}
                             </Card.Footer> */}
 
-                        {/* </Card>
+                        </Card>
                     )}
-                </Container> */}
+                </Container>
             </div>
         </>
     )
