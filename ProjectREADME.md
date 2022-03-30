@@ -27,6 +27,8 @@
 5.  https://github.com/ambassify/react-avatar/blob/master/demo/index.js
 6.  https://codesandbox.io/s/udtgo?file=/src/App.js:295-339
 7.  https://www.youtube.com/watch?v=ol1OhEX5nRg - double navbar
+8.  https://github.com/nytimes/public_api_specs/blob/master/books_api/books_api.md
+9.  https://www.postman.com/joey22562/workspace/ny-times-apis/documentation/11256970-503a01c7-1e0e-4444-bff9-f276b17ce91c
 
 ###  1)  index.js:
 1. import { BrowserRouter  } from 'react-router-dom';
