@@ -16,7 +16,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 //Navigation
-import NavMenu from './components/partials/NavMenu';
+// import NavMenu from './components/partials/NavMenu';
 import StackedNav from './components/partials/StackedNav';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
@@ -29,7 +29,7 @@ import Login from './components/users/Login';
 import Products from './components/store/Products';
 import Cart from './components/store/Cart';
 import Assemblies from './components/pages/Assemblies';
-import Events from './components/pages/Events';
+import BookReviews from './components/pages/BookReviews';
 import Articles from './components/pages/Articles';
 
 //conference
@@ -251,8 +251,8 @@ function App() {
               <Articles />
             </Route>
 
-            <Route path='/events'>
-              <Events />
+            <Route path='/books'>
+              <BookReviews />
             </Route>
 
             <Route path='/search'>
