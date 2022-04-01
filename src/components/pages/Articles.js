@@ -18,6 +18,8 @@ export default function Articles() {
         const jsonData = await response.json({});
         setArticles(jsonData);
         console.log(jsonData);
+        // console.log(jsonData['results'][0]['media'][0]['media-metadata'][0]['url'])
+        console.log(jsonData.results[0].media[0]['media-metadata'][0].url)
         // console.log(jsonData.media);
     };
 
@@ -54,7 +56,8 @@ export default function Articles() {
                             </Card.Header>
                             <Card.Body className='article-abstract'>
                                 <h5>{article.abstract}</h5>
-                                {/* <Card.Img className='article-image' variant='bottom' src={article.media.caption} /> */}
+                                {/* <p>{article.media[0]?.[0]?.url}</p> */}
+                                <Card.Img className='article-image' variant='bottom' src={article.media[0]?.['media-metadata'][0].url} />
                             </Card.Body>
                             <Card.Footer className='article-footer text-muted text-center'>
                                 {article.published_date}<br />
