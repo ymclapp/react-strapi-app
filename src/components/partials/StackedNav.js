@@ -31,6 +31,7 @@ export default function StackedNav() {
                     </div>
                     <div className='right'>
                         <ul>
+                            <li><a href='/home'>Home</a></li>
                             <li><a href='/conference'>Conference</a></li>
                             <li><a href='/store'>Store</a></li>
                             <li><a href='/search'>Search</a></li>
@@ -74,8 +75,8 @@ export default function StackedNav() {
                                 {/* </Nav.Link> */}
                             </div>
                         }
-                            {!user && <li><a href='/login'>Login</a></li>}
-                            {user && <li><a href='/login'>Logout</a></li>}
+                        {!user && <li><a href='/login'>Login</a></li>}
+                        {user && <li><a href='/login'>Logout</a></li>}
                     </ul>
                 </div>
                 <div
