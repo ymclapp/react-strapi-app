@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Container } from "react-bootstrap";
+import { Card, Container, Row, Col, Button } from "react-bootstrap";
 
 // const bookAPI = 'https://api.nytimes.com/svc/lists/names.json?api-key=HrfZtmSlf7oB2E4OPyzoyA6MGfRFkzr6';
 const bookAPI = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=HrfZtmSlf7oB2E4OPyzoyA6MGfRFkzr6';
 
 export default function Books() {
 
-    const [books, setBooks] = useState({results:[]});
+    const [books, setBooks] = useState({ results: [] });
 
 
     useEffect(() => {
@@ -44,25 +44,31 @@ export default function Books() {
                     </Card>
                 ))}
             </Container> */}
-                <Container fluid>
-                    {books.results.books?.map((book) =>
-                        <Card key={book.id}>
-                            <Card.Header
-                                className='article-header text-center'
-                            >
-                                <h1>{book.title}</h1>
-                                {/* <h5 className='text-muted'>{book.byline}</h5> */}
-                            </Card.Header>
-                            {/* <Card.Body className='article-abstract'>
-                                <h5>{book.abstract}</h5>
-                            </Card.Body> */}
-                            {/* <Card.Footer className='article-footer text-muted text-center'>
-                                {book.published_date}<br />
-                                {book.source}
-                            </Card.Footer> */}
+            <h1 className='text-center'>Hardcover Fiction</h1>
+                 <Container fluid>
+                    <Row xs={1} md={4} className="g-4">
+                        {books.results.books?.map((book) =>
+                            <Col>
+                                <Card key={book.id}>
+                                    <Card.Header
+                                        className='article-header text-center'
+                                    >
+                                        <h3>{book.title}</h3>
+                                        <h5 className='text-muted'>{book.contributor}</h5>
+                                    </Card.Header>
+                                    <Card.Body className='article-abstract text-justify'>
+                                        <h5>{book.description}</h5>
+                                        <Card.Img className='article-image' variant='bottom' src={book.book_image} />
+                                    </Card.Body>
+                                    <Card.Footer className='article-footer text-muted text-center'>
+                                        
+                                    <Button href={book.amazon_product_url}>{book.title} on Amazon</Button>
+                            </Card.Footer>
 
-                        </Card>
-                    )}
+                                </Card>
+                            </Col>
+                        )}
+                    </Row>
                 </Container>
             </div>
         </>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Container } from "react-bootstrap";
+import { Card, Row, Col, Container } from "react-bootstrap";
+
+import './Articles.css';
 
 const articleAPI = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=HrfZtmSlf7oB2E4OPyzoyA6MGfRFkzr6';
 
@@ -46,26 +48,29 @@ export default function Articles() {
                 ))}
             </Container> */}
                 <Container fluid>
-                    {articles.results.map((article) =>
-                        <Card key={article.id}>
-                            <Card.Header
-                                className='article-header text-center'
-                            >
-                                <h1>{article.title}</h1>
-                                <h5 className='text-muted'>{article.byline}</h5>
-                            </Card.Header>
-                            <Card.Body className='article-abstract'>
-                                <h5>{article.abstract}</h5>
-                                {/* <p>{article.media[0]?.[0]?.url}</p> */}
-                                <Card.Img className='article-image' variant='bottom' src={article.media[0]?.['media-metadata'][0].url} />
-                            </Card.Body>
-                            <Card.Footer className='article-footer text-muted text-center'>
-                                {article.published_date}<br />
-                                {article.source}
-                            </Card.Footer>
-
-                        </Card>
-                    )}
+                    <Row xs={1} md={4} className="g-4">
+                        {articles.results.map((article) =>
+                            <Col>
+                            <Card key={article.id}>
+                                <Card.Header
+                                    className='article-header text-center'
+                                >
+                                    <h3>{article.title}</h3>
+                                    <h5 className='text-muted'>{article.byline}</h5>
+                                </Card.Header>
+                                <Card.Body className='article-abstract text-justify'>
+                                    <h5>{article.abstract}</h5>
+                                    {/* <p>{article.media[0]?.[2]?.url}</p> */}
+                                    <Card.Img className='article-image' variant='bottom' src={article.media[0]?.['media-metadata'][2].url} />
+                                </Card.Body>
+                                <Card.Footer className='article-footer text-muted text-center'>
+                                    {article.published_date}<br />
+                                    {article.source}
+                                </Card.Footer>
+                            </Card>
+                            </Col>
+                        )}
+                    </Row>
                 </Container>
             </div>
         </>
