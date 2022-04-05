@@ -55,10 +55,10 @@ export default function Articles() {
                                 <Card.Header
                                     className='article-header text-center'
                                 >
-                                    <h1>{article.title}</h1>
+                                    <h3>{article.title}</h3>
                                     <h5 className='text-muted'>{article.byline}</h5>
                                 </Card.Header>
-                                <Card.Body className='article-abstract'>
+                                <Card.Body className='article-abstract text-justify'>
                                     <h5>{article.abstract}</h5>
                                     {/* <p>{article.media[0]?.[2]?.url}</p> */}
                                     <Card.Img className='article-image' variant='bottom' src={article.media[0]?.['media-metadata'][2].url} />
