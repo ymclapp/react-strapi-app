@@ -1,0 +1,22 @@
+.book-abstract {
+    margin: 2em;
+    border-radius: 1em;
+}
+
+.book-footer {
+    font-style: italic;
+}
+
+.book-image {
+    object-fit: cover;
+    padding-top: 20px;
+    height: 15vw;
+    width: 50%;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+.book-header {
+    font-size: x-large;
+    font-weight: 500;
+}
