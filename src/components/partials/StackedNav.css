@@ -19,23 +19,22 @@ font-family: 'Sansita Swashed', cursive; */
     top: 3em;
 } */
 
-.wrapper .multi_color_border{
+.wrapper .multi_color_border {
     width: 100%;
-    height:  5px;
+    height: 5px;
     /* background: red; */
-    background: linear-gradient( to right, 
-    dodgerblue 0%, dodgerblue 25%,
-    cyan 25%, cyan 50%,
-    dodgerblue 50%, dodgerblue 75%,
-    cyan 75%, cyan 100%
-    );
+    background: linear-gradient(to right,
+            dodgerblue 0%, dodgerblue 25%,
+            cyan 25%, cyan 50%,
+            dodgerblue 50%, dodgerblue 75%,
+            cyan 75%, cyan 100%);
 }
 
 .wrapper .top_nav {
     width: 100%;
     height: 40px;
-    background: midnightblue ;
-   padding-top: 1em;
+    background: midnightblue;
+    padding-top: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,6 +45,7 @@ font-family: 'Sansita Swashed', cursive; */
     align-items: center;
 
 }
+
 .logo {
     padding-top: 0;
 }
@@ -74,7 +74,7 @@ font-family: 'Sansita Swashed', cursive; */
     width: 250px;
 } */
 
-.wrapper .top_nav .right ul{
+.wrapper .top_nav .right ul {
     display: flex;
 }
 
@@ -119,15 +119,15 @@ font-family: 'Sansita Swashed', cursive; */
 }
 
 .wrapper .bottom_nav ul {
-    width:  100%;
+    width: 100%;
     height: 45px;
     /* padding-top: 2em; */
-    display:flex ;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.wrapper .bottom_nav ul li a{
+.wrapper .bottom_nav ul li a {
     color: lightgrey;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -135,7 +135,7 @@ font-family: 'Sansita Swashed', cursive; */
     text-decoration: none;
 }
 
-.banner{
+.banner {
     /* width: 100%;
     height:  400px; */
     background: no-repeat center;
@@ -146,25 +146,25 @@ font-family: 'Sansita Swashed', cursive; */
 
 .nav__right {
     flex: 1;
-  }
-  
-  .cart__icon {
+}
+
+.cart__icon {
     position: relative;
     width: max-content;
-    /* margin-left: 20em; */
+    margin-left: 40em;
     /* padding-right: 1em; */
     display: flex;
     align-items: center;
     justify-content: center;
     color: midnightblue;
 
-  }
-  
-  .cart__icon i {
+}
+
+.cart__icon i {
     cursor: pointer;
-  }
-  
-  .item__count {
+}
+
+.item__count {
     position: absolute;
     display: grid;
     place-items: center;
@@ -175,16 +175,16 @@ font-family: 'Sansita Swashed', cursive; */
     height: 14px;
     width: 14px;
     top: -40%;
-    right: 1em;
-  }
+    right: -1em;
+}
 
-  .avatar {
+.avatar {
     font-size: small;
     margin: 1em;
 
-  }
-  
-  .mask {
+}
+
+.mask {
     height: 12em;
     /* align-items: center; */
-  }
+}
